@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" href="../static/img/logotype.png" type="image/png" />
+    <title>{% block title %}ГСП{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/vendors/linericon/style.css">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="../static/vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="../static/vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="../static/vendors/jquery-ui/jquery-ui.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <link rel="stylesheet" href="../static/css/weight.css">
+
+</head>
+
+<body>
+
+    {% include 'navbar/navbar.html' %}
+    {% block content %}
+    {% endblock content %}
+    {% include 'footer/footer.html' %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script src="../static/js/popper.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/stellar.js"></script>
+    <script src="../static/vendors/lightbox/simpleLightbox.min.js"></script>
+    <script src="../static/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="../static/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="../static/vendors/isotope/isotope-min.js"></script>
+    <script src="../static/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+    <script src="../static/vendors/counter-up/jquery.waypoints.min.js"></script>
+    <script src="../static/vendors/flipclock/timer.js"></script>
+    <script src="../static/vendors/counter-up/jquery.counterup.js"></script>
+    <script src="../static/js/mail-script.js"></script>
+    <script src="../static/js/theme.js"></script>
+
+<style type="text/css">#hellopreloader>p{display:none;}#hellopreloader_preload{display: block;position: fixed;z-index: 99999;top: 0;left: 0;width: 100%;height: 100%;min-width: 1000px;background: #6BB9F0 url(http://hello-site.ru//main/images/preloads/ball-triangle.svg) center center no-repeat;background-size:41px;}</style>
+<div id="hellopreloader"><div id="hellopreloader_preload"></div><p><a href="http://hello-site.ru">Hello-Site.ru. Бесплатный конструктор сайтов.</a></p></div>
+<script type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload");function fadeOutnojquery(el){el.style.opacity = 1;var interhellopreloader = setInterval(function(){el.style.opacity = el.style.opacity - 0.05;if (el.style.opacity <=0.05){ clearInterval(interhellopreloader);hellopreloader.style.display = "none";}},16);}window.onload = function(){setTimeout(function(){fadeOutnojquery(hellopreloader);},1000);};</script>
+
+
+</body>
+</html>
+{#{% load static %}#}
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#<meta charset="utf-8" />#}
+{#<title>{% block title %}mygsp{% endblock %}</title>#}
+{#<link href="{% static "css/style.css" %}" rel="stylesheet">#}
+{#</head>#}
+{#<body>#}
+{#<div id="header">#}
+{#<a href="/" class="logo">GSP</a>#}
+{#</div>#}
+{#<div id="subheader">#}
+{#<div class="cart">Your cart is empty.</div>#}
+{#</div>#}
+{#<div id="content">#}
+{#{% block content %}{% endblock %}#}
+{#</div>#}
+{#</body>#}
+{#</html>#}

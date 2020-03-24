@@ -1,0 +1,73 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+from .forms import LoginForm, UserRegistrationForm, UserEditForm, MasterEditForm
+from django.contrib.auth.decorators import login_required
+from .models import Master
+
+
+def user_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            user = authenticate(request,
+                                username=cd['username'],
+                                password=cd['password'])
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return HttpResponse('Authenticated successfully')
+                else:
+                    return HttpResponse('Disabled account')
+            else:
+                return HttpResponse('Invalid login')
+    else:
+        form = LoginForm()
+    return render(request, 'account_master/login.html', {'form': form})
+
+
+@login_required
+def dashboard(request):
+    return render(request, 'account_master/dashboard.html', {'section': 'dashboard'})
+
+
+def register(request):
+    if request.method == 'POST':
+        user_form = UserRegistrationForm(request.POST)
+        if user_form.is_valid():
+            # Создаем нового юзера, но в БАЗЕ он НЕ СОХРАНЕН! ПОКА ЧТО!
+            new_user = user_form.save(commit=False)
+            # Зададим юзеру пароль для его аккаунта
+            new_user.set_password(user_form.cleaned_data['password'])
+            # Сохраним юзера в БАЗЕ
+            new_user.save()
+            Master.objects.create(user=new_user)
+            return render(request, 'account_master/register_done.html', {'new_user': new_user})
+    else:
+        user_form = UserRegistrationForm()
+    return render(request, 'account_master/register.html', {'user_form': user_form})
+
+
+@login_required
+def edit_master(request):
+    if request.method == 'POST':
+        user_form = UserEditForm(instance=request.user,
+                                 data=request.POST)
+        master_form = MasterEditForm(instance=request.user.master,
+                                     data=request.POST,
+                                     files=request.FILES)
+        if user_form.is_valid() and master_form.is_valid():
+            user_form.save()
+            master_form.save()
+        #     messages.success(request, 'Profile updated successfully')
+        # else:
+        #     messages.error(request, 'Error updating your profile')
+    else:
+        user_form = UserEditForm(instance=request.user)
+        master_form = MasterEditForm(instance=request.user.master)
+    return render(request, 'account_master/edit_master.html', {
+        'user_form': user_form,
+        'master_form': master_form
+    })

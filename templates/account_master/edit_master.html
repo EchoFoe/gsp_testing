@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+
+{% block title %}Редактировать свой аккаунт{% endblock %}
+
+{% block content %}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../../static/css/bootstrap.css">
+<link rel="stylesheet" href="../../static/vendors/linericon/style.css">
+<link rel="stylesheet" href="../../static/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../static/vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="../../static/vendors/lightbox/simpleLightbox.css">
+<link rel="stylesheet" href="../../static/vendors/nice-select/css/nice-select.css">
+<link rel="stylesheet" href="../../static/vendors/animate-css/animate.css">
+<link rel="stylesheet" href="../../static/vendors/jquery-ui/jquery-ui.css">
+<!-- main css -->
+<link rel="stylesheet" href="../../static/css/style.css">
+<link rel="stylesheet" href="../../static/css/responsive.css">
+
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+            <div class="banner_content text-center">
+                <h2>Редактировать свой профиль</h2>
+                <div class="page_link">
+                    <a href="{% url 'mygsp:offer_list' %}">Заказы</a>
+                    <a href="{% url 'logout' %}">Выйти из системы</a>
+                </div>
+                <div class="page_link">
+                    <a href={% url 'password_change' %}>Сменить пароль</a>
+                    <a>Смена пароля</a>
+                </div>
+                <div class="page_link">
+                    <a href={% url 'edit_master' %}>Изменить свой профиль</a>
+                    <a>Профиль</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--================Checkout Area =================-->
+<section class="checkout_area p_120">
+    <div class="container">
+        <div class="returning_customer">
+            <div class="check_title">
+                <h2>Хотите сменить свой пароль? <a href="{% url 'password_change' %}">Сменить пароль</a></h2>
+            </div>
+            <p>Редактируя данные о себе, старайтесь не допускать ошибок</p>
+            <p>* Поля для обязательного заполнения!</p>
+        </div>
+        <div class="billing_details">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3 class="">Форма для редактирования данных о себе:</h3>
+                    <form class="row contact_form" action="." method="post" novalidate="novalidate" enctype="multipart/form-data">
+                        <div class="col-md-4 form-group p_star">
+                            <label for="id_first_name" class="">* Ваше имя:</label>
+                            <input type="text" class="form-control" value="{{ user.first_name }}" id="id_first_name" name="{{ user_form.first_name.name }}">
+                        </div>
+                        <div class="col-md-4 form-group p_star">
+                            <label for="id_last_name" class="check_title">Ваша фамилия:</label>
+                            <input type="text" class="form-control" value="{{ user.last_name }}" id="id_last_name" name="{{ user_form.last_name.name }}">
+                        </div>
+                        <div class="col-md-4 form-group p_star">
+                            <label for="id_middle_name" class="check_title">Ваше отчество:</label>
+                            {% if user.master.middle_name %}
+                            <input type="text" class="form-control" value="{{ user.master.middle_name }}" id="id_middle_name" name="{{ master_form.middle_name.name }}">
+                            {% else %}
+                            <input type="text" class="form-control" id="id_middle_name" value="{{ request.POST.name }}" name="{{ master_form.middle_name.name }}">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6 form-group p_star">
+                            <label for="id_phone" class="">Ваш номер телефона:</label>
+                            {% if user.master.phone %}
+                            <input type="tel" class="form-control" id="id_phone" value="{{ user.master.phone }}" name="{{ master_form.phone.name }}">
+                            {% else %}
+                            <input type="tel" class="form-control" id="id_phone" value="{{ request.POST.name }}" name="{{ master_form.phone.name }}">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6 form-group p_star">
+                            <label for="id_email" class="">* Ваш e-mail:</label>
+                            <input type="email" class="form-control" id="id_email" value="{{ user.email }}" name="{{ user_form.email.name }}">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            {% if user.master.date_of_birth %}
+                            <label for="id_date_of_birth" class="">Ваша дата рождения: ({{ user.master.date_of_birth }})</label>
+                            <input type="date" class="form-control" id="id_date_of_birth" name="{{ master_form.date_of_birth.name }}" placeholder="Дата рождения" max="2002-01-01">
+                            {% else %}
+                            <label for="id_date_of_birth" class="">Ваша дата рождения:</label>
+                            <input type="date" class="form-control" id="id_date_of_birth" name="{{ master_form.date_of_birth.name }}" placeholder="Дата рождения" max="2002-01-01">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-12 form-group">
+                            {% if user.master.photo %}
+                            <label for="id_photo" class="">На данный момент Ваша <a target="_blank" href="{{ user.master.photo.url }}">фотография</a> </label>
+                            <input type="file" class="form-control" accept="image/*" id="id_photo" name="{{ master_form.photo.name }}" placeholder="Фотография">
+                            {% else %}
+                            <label for="id_photo" class="">Ваша фотография:</label>
+                            <input type="file" class="form-control" accept="image/*" id="id_photo" name="{{ master_form.photo.name }}" placeholder="Фотография">
+                            {% endif %}
+                        </div>
+{#                        <div class="col-md-12 form-group p_star">#}
+{#                            <select class="country_select">#}
+{#                                <option value="1">Country</option>#}
+{#                                <option value="2">Country</option>#}
+{#                                <option value="4">Country</option>#}
+{#                            </select>#}
+{#                        </div>#}
+{#                        <div class="col-md-12 form-group p_star">#}
+{#                            <input type="text" class="form-control" id="add1" name="add1">#}
+{#                            <span class="placeholder" data-placeholder="Address line 01"></span>#}
+{#                        </div>#}
+{#                        <div class="col-md-12 form-group p_star">#}
+{#                            <input type="text" class="form-control" id="add2" name="add2">#}
+{#                            <span class="placeholder" data-placeholder="Address line 02"></span>#}
+{#                        </div>#}
+{#                        <div class="col-md-12 form-group p_star">#}
+{#                            <input type="text" class="form-control" id="city" name="city">#}
+{#                            <span class="placeholder" data-placeholder="Town/City"></span>#}
+{#                        </div>#}
+{#                        <div class="col-md-12 form-group p_star">#}
+{#                            <select class="country_select">#}
+{#                                <option value="1">District</option>#}
+{#                                <option value="2">District</option>#}
+{#                                <option value="4">District</option>#}
+{#                            </select>#}
+{#                        </div>#}
+{#                        <div class="col-md-12 form-group">#}
+{#                            <input type="text" class="form-control" id="zip" name="zip" placeholder="Postcode/ZIP">#}
+{#                        </div>#}
+{#                        <div class="col-md-12 form-group">#}
+{#                            <div class="creat_account">#}
+{#                                <input type="checkbox" id="f-option2" name="selector">#}
+{#                                <label for="f-option2">Create an account?</label>#}
+{#                            </div>#}
+{#                        </div>#}
+                        <div class="col-md-12 form-group">
+{#                            <div class="creat_account">#}
+{#                                <h3>Shipping Details</h3>#}
+{#                                <input type="checkbox" id="f-option3" name="selector">#}
+{#                                <label for="f-option3">Ship to a different address?</label>#}
+{#                            </div>#}
+                            <label for="id_description" class="">О себе:</label>
+                            {% if user.master.description %}
+                            <textarea class="form-control" name="{{ master_form.description.name }}" id="id_description" rows="1">{{ user.master.description }}</textarea>
+                            {% else %}
+                            <textarea class="form-control" name="{{ master_form.description.name }}" id="id_description" rows="1"></textarea>
+                            {% endif %}
+                        </div>
+                        {% csrf_token %}
+                        <div class="col-md-12 form-group">
+                            <button type="submit" value="submit" class="btn submit_btn">Сохранить изменения</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <div class="order_box">
+                        <h2 class="text-center">Заказы, которые Вы выполнили:</h2>
+                        <ul class="list">
+{#                            <li><a href="#">Product <span>Total</span></a></li>#}
+{#                            <li><a href="#">Fresh Blackberry <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>#}
+{#                            <li><a href="#">Fresh Tomatoes <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>#}
+{#                            <li><a href="#">Fresh Brocoli <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>#}
+                        </ul>
+                        <ul class="list list_2">
+                            <li><a href="#">Заказ 1 <span>2323</span></a></li>
+                            <li><a href="#">Заказ 2 <span>3232</span></a></li>
+                        </ul>
+                        <div class="payment_item">
+{#                            <div class="radion_btn">#}
+{#                                <input type="radio" id="f-option5" name="selector">#}
+{#                                <label for="f-option5">Check payments</label>#}
+{#                                <div class="check"></div>#}
+{#                            </div>#}
+                            <p>Вы можете быстрее получить свои первые оценки на сайте, если первое время будете предлагать свои услуги буквально на все заказы, которые готовы выполнить.</p>
+                        </div>
+{#                        <div class="payment_item active">#}
+{#                            <div class="radion_btn">#}
+{#                                <input type="radio" id="f-option6" name="selector">#}
+{#                                <label for="f-option6">Paypal </label>#}
+{#                                <img src="../../static/img/product/single-product/card.jpg" alt="">#}
+{#                                <div class="check"></div>#}
+{#                            </div>#}
+{#                            <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>#}
+{#                        </div>#}
+{#                        <div class="creat_account">#}
+{#                            <input type="checkbox" id="f-option4" name="selector">#}
+{#                            <label for="f-option4">I’ve read and accept the </label>#}
+{#                            <a href="#">terms & conditions*</a>#}
+{#                        </div>#}
+{#                        <a class="main_btn" href="#">Proceed to Paypal</a>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Checkout Area =================-->
+
+{#<h1>Отредактируйте свой аккаунт</h1>#}
+{#<p>Вы можете отредактировать свой аккаунт, используя формы ниже:</p>#}
+{#<form action="." method="post" enctype="multipart/form-data">#}
+{#{{ user_form.as_p }}#}
+{#{{ master_form.as_p }}#}
+{#{% csrf_token %}#}
+{#<p><input type="submit" value="Сохранить изменения"></p>#}
+{#</form>#}
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../../static/js/jquery-3.2.1.min.js"></script>
+<script src="../../static/js/popper.js"></script>
+<script src="../../static/js/bootstrap.min.js"></script>
+<script src="../../static/js/stellar.js"></script>
+<script src="../../static/vendors/lightbox/simpleLightbox.min.js"></script>
+<script src="../../static/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+<script src="../../static/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+<script src="../../static/vendors/isotope/isotope-min.js"></script>
+<script src="../../static/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="../../static/js/jquery.ajaxchimp.min.js"></script>
+<script src="../../static/vendors/counter-up/jquery.waypoints.min.js"></script>
+<script src="../../static/vendors/flipclock/timer.js"></script>
+<script src="../../static/vendors/counter-up/jquery.counterup.js"></script>
+<script src="../../static/js/mail-script.js"></script>
+<script src="../../static/js/theme.js"></script>
+
+{% endblock %}
