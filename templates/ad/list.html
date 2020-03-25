@@ -27,7 +27,7 @@
     <div class="banner_inner d-flex align-items-center">
         <div class="container">
             <div class="banner_content text-center">
-                <h2>{% if category %}{{ category.name }}{% else %}Все реклма{% endif %}</h2>
+                <h2>{% if category %}{{ category.name }}{% else %}Реклама{% endif %}</h2>
                 <div class="page_link">
                     <a href="#">Домой</a>
                     <a href="#">Все категории работ</a>
@@ -95,8 +95,8 @@
 
                     {% for promotion in promotions %}
                         <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="ad_item">
-                                <div class="ad_img">
+                            <div class="f_p_item">
+                                <div class="f_p_img">
                                     <a href="{{ promotion.get_absolute_url }}">
                                         <img class="img-fluid" src="{% if promotion.logotype %}{{ promotion.logotype.url }}{%else %}{% static "img/no_image.png" %}{% endif %}" alt="">
                                     </a>
