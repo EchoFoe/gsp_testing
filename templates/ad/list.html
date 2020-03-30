@@ -100,10 +100,10 @@
                                     <a href="{{ promotion.get_absolute_url }}">
                                         <img class="img-fluid" src="{% if promotion.logotype %}{{ promotion.logotype.url }}{%else %}{% static "img/no_image.png" %}{% endif %}" alt="">
                                     </a>
-                                    <div class="p_icon">
-                                        <a href="#"><i class="lnr lnr-checkmark-circle"></i></a>
-                                        <a href="#"><i class="lnr lnr-user"></i></a>
-                                    </div>
+{#                                    <div class="p_icon">#}
+{#                                        <a href="#"><i class="lnr lnr-checkmark-circle"></i></a>#}
+{#                                        <a href="#"><i class="lnr lnr-user"></i></a>#}
+{#                                    </div>#}
                                 </div>
                                 <a href="{{ promotion.get_absolute_url }}">
                                     <h4>{{ promotion.name }}</h4>
