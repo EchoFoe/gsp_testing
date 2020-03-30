@@ -68,12 +68,30 @@
                 <div class="s_product_text">
                     <h3>{{ promotion.name }}</h3>
                     <ul class="list">
-                        <li><a class="active" href="{{ promotion.category.get_absolute_url }}">{{ promotion.category }}</a></li>
+{#                        <li><a class="active" href="{{ promotion.category.get_absolute_url }}">{{ promotion.category }}</a></li>#}
                         <li><a><i class="lnr lnr-home"></i> Адрес: {{ promotion.country }}, {{ promotion.region }}, {{ promotion.town }}, {{ promotion.address }}</a></li>
+                        {% if promotion.email %}
+                            <li><a><i class="lnr lnr-envelope"></i> E-mail: {{ promotion.email }}</a></li>
+                        {% endif %}
                         {% if promotion.schedule_start and promotion.schedule_end %}
-                        <li><a><i class="lnr lnr-clock"></i> Часы работы: {{ promotion.schedule_start|time:'H:i' }} - {{ promotion.schedule_end|time:'H:i' }}</a></li>
+                        <li><a><i class="lnr lnr-clock"></i> Часы работы (Пн - Пт): {{ promotion.schedule_start|time:'H:i' }} - {{ promotion.schedule_end|time:'H:i' }}</a></li>
                         {% else %}
                         <li><a><i class="lnr lnr-calendar-full"></i> Часы работы: круглосуточно </a></li>
+                        {% endif %}
+                        {% if promotion.weekend_start and promotion.weekend_end %}
+                        <li><a><i class="lnr lnr-clock"></i> Часы работы (Суббота): {{ promotion.weekend_start|time:'H:i' }} - {{ promotion.weekend_end|time:'H:i' }}</a></li>
+                        {% else %}
+                        <li><a><i class="lnr lnr-calendar-full"></i> Суббота - выходной день </a></li>
+                        {% endif %}
+                        {% if promotion.weekend2_start and promotion.weekend2_end %}
+                        <li><a><i class="lnr lnr-clock"></i> Часы работы (Воскресенье): {{ promotion.weekend2_start|time:'H:i' }} - {{ promotion.weekend2_end|time:'H:i' }}</a></li>
+                        {% else %}
+                        <li><a><i class="lnr lnr-calendar-full"></i> Воскресенье - выходной день </a></li>
+                        {% endif %}
+                        {% if promotion.dinner_time_start and promotion.dinner_time_end %}
+                        <li><a><i class="lnr lnr-dinner"></i> Обеденный перерыв: {{ promotion.dinner_time_start|time:'H:i' }} - {{ promotion.dinner_time_end|time:'H:i' }}</a></li>
+                        {% else %}
+                        <li><a><i class="lnr lnr-dinner"></i> Без обеденного перерыва </a></li>
                         {% endif %}
                         {% if promotion.phone %}
                         <li><a><i class="lnr lnr-phone"></i> Телеофон: {{ promotion.phone }} </a></li>

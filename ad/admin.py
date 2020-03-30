@@ -23,7 +23,7 @@ class SubCategoryAdmin(admin.ModelAdmin):
 class PromotionAdmin(admin.ModelAdmin):
     save_as = True
     filter_horizontal = ['category']
-    fields = ['category', 'subcategory', ('name', 'slug'), ('email', 'phone'), ('country', 'region', 'town'), 'address', 'site', 'description', 'logotype', 'photo', 'is_active', 'paid', ('schedule_start', 'schedule_end'), ('created', 'updated')]
+    fields = ['category', 'subcategory', ('name', 'slug'), ('email', 'phone'), ('country', 'region', 'town'), 'address', 'site', 'description', 'logotype', 'photo', 'is_active', 'paid', ('schedule_start', 'schedule_end'), ('weekend_start', 'weekend_end'), ('weekend2_start', 'weekend2_end'), ('dinner_time_start', 'dinner_time_end'), ('created', 'updated')]
     list_display = ['name', 'Категории', 'subcategory', 'is_active', 'paid']
     list_filter = ['is_active', 'paid', 'category', 'subcategory', 'created', 'updated']
     list_editable = ['is_active', 'paid']
