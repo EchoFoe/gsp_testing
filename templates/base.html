@@ -8,20 +8,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="icon" href="../static/img/logotype.png" type="image/png" />
     <title>{% block title %}ГСП{% endblock %}</title>
+{#    <!-- Bootstrap CSS -->#}
+{#    <link rel="stylesheet" href="../static/css/bootstrap.css">#}
+{#    <link rel="stylesheet" href="../static/vendors/linericon/style.css">#}
+{#    <link rel="stylesheet" href="../static/css/font-awesome.min.css">#}
+{#    <link rel="stylesheet" href="../static/vendors/owl-carousel/owl.carousel.min.css">#}
+{#    <link rel="stylesheet" href="../static/vendors/lightbox/simpleLightbox.css">#}
+{#    <link rel="stylesheet" href="../static/vendors/nice-select/css/nice-select.css">#}
+{#    <link rel="stylesheet" href="../static/vendors/animate-css/animate.css">#}
+{#    <link rel="stylesheet" href="../static/vendors/jquery-ui/jquery-ui.css">#}
+{#    <!-- main css -->#}
+{#    <link rel="stylesheet" href="../static/css/style.css">#}
+{#    <link rel="stylesheet" href="../static/css/responsive.css">#}
+{#    <link rel="stylesheet" href="../static/css/weight.css">#}
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../static/css/bootstrap.css">
-    <link rel="stylesheet" href="../static/vendors/linericon/style.css">
-    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/vendors/owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="../static/vendors/lightbox/simpleLightbox.css">
-    <link rel="stylesheet" href="../static/vendors/nice-select/css/nice-select.css">
-    <link rel="stylesheet" href="../static/vendors/animate-css/animate.css">
-    <link rel="stylesheet" href="../static/vendors/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/linericon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/lightbox/simpleLightbox.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/jquery-ui/jquery-ui.css' %}">
     <!-- main css -->
-    <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="../static/css/responsive.css">
-    <link rel="stylesheet" href="../static/css/weight.css">
-
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 </head>
 
 <body>
@@ -31,23 +42,40 @@
     {% endblock content %}
     {% include 'footer/footer.html' %}
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../static/js/jquery-3.2.1.min.js"></script>
-    <script src="../static/js/popper.js"></script>
-    <script src="../static/js/bootstrap.min.js"></script>
-    <script src="../static/js/stellar.js"></script>
-    <script src="../static/vendors/lightbox/simpleLightbox.min.js"></script>
-    <script src="../static/vendors/nice-select/js/jquery.nice-select.min.js"></script>
-    <script src="../static/vendors/isotope/imagesloaded.pkgd.min.js"></script>
-    <script src="../static/vendors/isotope/isotope-min.js"></script>
-    <script src="../static/vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="../static/js/jquery.ajaxchimp.min.js"></script>
-    <script src="../static/vendors/counter-up/jquery.waypoints.min.js"></script>
-    <script src="../static/vendors/flipclock/timer.js"></script>
-    <script src="../static/vendors/counter-up/jquery.counterup.js"></script>
-    <script src="../static/js/mail-script.js"></script>
-    <script src="../static/js/theme.js"></script>
+
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/stellar.js' %}"></script>
+    <script src="{% static 'vendors/lightbox/simpleLightbox.min.js' %}"></script>
+    <script src="{% static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendors/isotope/isotope-min.js' %}"></script>
+    <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'vendors/flipclock/timer.js' %}"></script>
+    <script src="{% static 'vendors/counter-up/jquery.counterup.js' %}"></script>
+    <script src="{% static 'js/mail-script.js' %}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
+
+{#    <!-- Optional JavaScript -->#}
+{#    <!-- jQuery first, then Popper.js, then Bootstrap JS -->#}
+{#    <script src="../static/js/jquery-3.2.1.min.js"></script>#}
+{#    <script src="../static/js/popper.js"></script>#}
+{#    <script src="../static/js/bootstrap.min.js"></script>#}
+{#    <script src="../static/js/stellar.js"></script>#}
+{#    <script src="../static/vendors/lightbox/simpleLightbox.min.js"></script>#}
+{#    <script src="../static/vendors/nice-select/js/jquery.nice-select.min.js"></script>#}
+{#    <script src="../static/vendors/isotope/imagesloaded.pkgd.min.js"></script>#}
+{#    <script src="../static/vendors/isotope/isotope-min.js"></script>#}
+{#    <script src="../static/vendors/owl-carousel/owl.carousel.min.js"></script>#}
+{#    <script src="../static/js/jquery.ajaxchimp.min.js"></script>#}
+{#    <script src="../static/vendors/counter-up/jquery.waypoints.min.js"></script>#}
+{#    <script src="../static/vendors/flipclock/timer.js"></script>#}
+{#    <script src="../static/vendors/counter-up/jquery.counterup.js"></script>#}
+{#    <script src="../static/js/mail-script.js"></script>#}
+{#    <script src="../static/js/theme.js"></script>#}
 
 <style type="text/css">#hellopreloader>p{display:none;}#hellopreloader_preload{display: block;position: fixed;z-index: 99999;top: 0;left: 0;width: 100%;height: 100%;min-width: 1000px;background: #6BB9F0 url(http://hello-site.ru//main/images/preloads/ball-triangle.svg) center center no-repeat;background-size:41px;}</style>
 <div id="hellopreloader"><div id="hellopreloader_preload"></div><p><a href=""></a></p></div>
