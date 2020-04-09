@@ -24,6 +24,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mptt',
+    'job.apps.JobConfig',
+    'reclame.apps.ReclameConfig',
 
     'mygsp.apps.MygspConfig',
     'ad.apps.AdConfig',

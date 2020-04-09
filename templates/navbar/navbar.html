@@ -33,11 +33,11 @@
                         {% if user.is_superuser %}
                             <li class="nav-item active"><a class="nav-link" href="/admin/">Админка</a></li>
                         {% endif %}
-                        <li class="nav-item active"><a class="nav-link" href="{% url 'mygsp:offer_list' %}">Заказы</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'job:offer_list' %}">Заказы</a></li>
                         <li class="nav-item submenu dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Реклама</a>
                             <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="{% url 'ad:promotion_list' %}">1</a>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'reclame:promotion_list' %}">1</a>
                                 <li class="nav-item"><a class="nav-link" href="#">2</a>
                                 <li class="nav-item"><a class="nav-link" href="#">3</a>
                                 <li class="nav-item"><a class="nav-link" href="#">4</a></li>

@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load mptt_tags %}
+
+{% block title %}
+    {% if category %}
+        {{ category.name }}
+        {% else %}Заказы
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+            <div class="banner_content text-center">
+                <h2>{% if category %}{{ category.name }}{% else %}Все заказы{% endif %}</h2>
+                <div class="page_link">
+                    <a href="#">Домой</a>
+                    <a href="#">Все категории работ</a>
+                    <a href="#">{% if category %}{{ category.name }}{% else %}Заказы{% endif %}</a>
+                </div>
+                <div class="main_add_offer">
+        			<a class="main_btn" href="#">Добавить заказ</a>
+        		</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cat_product_area p_120">
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-lg-9">
+                <div class="product_top_bar">
+                    <div class="left_dorp">
+                        <select class="sorting">
+                            <option value="1">Сортировать заказы</option>
+                            <option value="2">Сортировка по принципу 1</option>
+                            <option value="4">Сортировка по принципу 2</option>
+                        </select>
+{#                        <select class="show">#}
+{#                            <option value="1">Показать</option>#}
+{#                            <option value="2">Показать 14</option>#}
+{#                            <option value="4">Показать 16</option>#}
+{#                        </select>#}
+                    </div>
+                    {% include 'job/pagination.html' with page=offers %}
+                </div>
+                <div class="latest_product_inner row">
+                    {% for offer in offers %}
+                        <div class="col-md-12">
+                            <div class="offer_post">
+                                <div class="offer_details">
+                                    <a href="{{ offer.get_absolute_url }}"><h2>{{offer.name}}</h2></a>
+                                    <div class="offer_info text-left">
+                                        <div class="offer_tag">
+                                            <a class="active">{{ offer.Категории }}</a>
+                                        </div>
+                                        <ul class="offer_meta list">
+                                            <li><a href="/"><i class="lnr lnr-user"></i> Заказчик: {{ offer.first_name }}</a></li>
+                                            <li><a><i class="lnr lnr-chart-bars"></i> Цена: {{ offer.price }} руб </a></li>
+                                            <li><a><i class="lnr lnr-clock"></i> Заказ добавлен: {{ offer.created }}</a></li>
+                                            {% if offer.start_time and offer.end_time %}
+                                            <li><a><i class="lnr lnr-calendar-full"></i> Дата начала работ: {{ offer.start_time }} </a></li>
+                                            <li><a><i class="lnr lnr-calendar-full"></i> Дата окончания работ: {{ offer.end_time }} </a></li>
+                                            {% else %}
+                                            <li><a><i class="lnr lnr-calendar-full"></i> Начать работы в любое время </a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                    <p>{{offer.description|truncatechars:220}}</p>
+                                    <a href="{{ offer.get_absolute_url }}" class="white_bg_btn">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+{#                    {% for offer in offers %}#}
+{#                        <div class="col-lg-4 col-md-4 col-sm-6">#}
+{#                            <div class="f_p_item">#}
+{#                                <div class="f_p_img">#}
+{#                                    <a href="{{ offer.get_absolute_url }}">#}
+{#                                        <img class="img-fluid" src="{% if offer.image %}{{ offer.image.url }}{%else %}{% static "img/no_image.png" %}{% endif %}" alt="">#}
+{#                                    </a>#}
+{#                                    <div class="p_icon">#}
+{#                                        <a href="#"><i class="lnr lnr-checkmark-circle"></i></a>#}
+{#                                        <a href="#"><i class="lnr lnr-user"></i></a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <a href="{{ offer.get_absolute_url }}">#}
+{#                                    <h4>{{ offer.name }}</h4>#}
+{#                                </a>#}
+{#                                <h5>{{ offer.price }} руб. </h5>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="left_sidebar_area">
+                    <aside class="left_widgets cat_widgets">
+                        <div class="l_w_title">
+                            <h3>Все категории работ</h3>
+                        </div>
+                        <div class="widgets_inner">
+                            <ul class="list">
+                                <li {% if not category %} class="selected" {% endif %}>
+                                    <a href="{% url "job:offer_list" %}">Все</a>
+                                </li>
+                                {% recursetree categories %}
+                                    <li>
+                                        <a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
+                                        {% if not node.is_leaf_node %}
+                                            <ul class="list">
+                                                <li><a href="#">{{ children }}</a></li>
+                                            </ul>
+                                        {% endif %}
+                                    </li>
+                                {% endrecursetree %}
+                            </ul>
+                        </div>
+                    </aside>
+{#                    <aside class="left_widgets p_filter_widgets">#}
+{#                        <div class="l_w_title">#}
+{#                            <h3>Product Filters</h3>#}
+{#                        </div>#}
+{#                        <div class="widgets_inner">#}
+{#                            <h4>Brand</h4>#}
+{#                            <ul class="list">#}
+{#                                <li><a href="#">Apple</a></li>#}
+{#                                <li><a href="#">Asus</a></li>#}
+{#                                <li class="active"><a href="#">Gionee</a></li>#}
+{#                                <li><a href="#">Micromax</a></li>#}
+{#                                <li><a href="#">Samsung</a></li>#}
+{#                            </ul>#}
+{#                        </div>#}
+{#                        <div class="widgets_inner">#}
+{#                            <h4>Color</h4>#}
+{#                            <ul class="list">#}
+{#                                <li><a href="#">Black</a></li>#}
+{#                                <li><a href="#">Black Leather</a></li>#}
+{#                                <li class="active"><a href="#">Black with red</a></li>#}
+{#                                <li><a href="#">Gold</a></li>#}
+{#                                <li><a href="#">Spacegrey</a></li>#}
+{#                            </ul>#}
+{#                        </div>#}
+{#                        <div class="widgets_inner">#}
+{#                            <h4>Price</h4>#}
+{#                            <div class="range_item">#}
+{#                                <div id="slider-range"></div>#}
+{#                                <div class="row m0">#}
+{#                                    <label for="amount">Price : </label>#}
+{#                                    <input type="text" id="amount" readonly>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </aside>#}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

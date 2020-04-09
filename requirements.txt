@@ -1,3 +1,4 @@
+django-mptt
 asgiref==3.2.3
 Django==3.0.3
 Pillow==7.0.0

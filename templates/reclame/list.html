@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load mptt_tags %}
 
 {% block title %}
     {% if category %}
@@ -10,28 +11,28 @@
 
 {% block content %}
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="../../static/css/bootstrap.css">
-<link rel="stylesheet" href="../../static/vendors/linericon/style.css">
-<link rel="stylesheet" href="../../static/css/font-awesome.min.css">
-<link rel="stylesheet" href="../../static/vendors/owl-carousel/owl.carousel.min.css">
-<link rel="stylesheet" href="../../static/vendors/lightbox/simpleLightbox.css">
-<link rel="stylesheet" href="../../static/vendors/nice-select/css/nice-select.css">
-<link rel="stylesheet" href="../../static/vendors/animate-css/animate.css">
-<link rel="stylesheet" href="../../static/vendors/jquery-ui/jquery-ui.css">
-<!-- main css -->
-<link rel="stylesheet" href="../../static/css/style.css">
-<link rel="stylesheet" href="../../static/css/responsive.css">
+{#<!-- Bootstrap CSS -->#}
+{#<link rel="stylesheet" href="../../../static/css/bootstrap.css">#}
+{#<link rel="stylesheet" href="../../../static/vendors/linericon/style.css">#}
+{#<link rel="stylesheet" href="../../../static/css/font-awesome.min.css">#}
+{#<link rel="stylesheet" href="../../../static/vendors/owl-carousel/owl.carousel.min.css">#}
+{#<link rel="stylesheet" href="../../../static/vendors/lightbox/simpleLightbox.css">#}
+{#<link rel="stylesheet" href="../../../static/vendors/nice-select/css/nice-select.css">#}
+{#<link rel="stylesheet" href="../../../static/vendors/animate-css/animate.css">#}
+{#<link rel="stylesheet" href="../../../static/vendors/jquery-ui/jquery-ui.css">#}
+{#<!-- main css -->#}
+{#<link rel="stylesheet" href="../../../static/css/style.css">#}
+{#<link rel="stylesheet" href="../../../static/css/responsive.css">#}
 
 <section class="banner_area">
     <div class="banner_inner d-flex align-items-center">
         <div class="container">
             <div class="banner_content text-center">
-                <h2>{% if category %}{{ category.name }}{% else %}Реклама{% endif %}</h2>
+                <h2>{% if category %}{{ category.name }}{% else %} Реклама {% endif %}</h2>
                 <div class="page_link">
                     <a href="#">Домой</a>
                     <a href="#">Все категории работ</a>
-                    <a href="#">{% if category %}{{ category.name }}{% else %}Реклмаы{% endif %}</a>
+                    <a href="#">{% if category %}{{ category.name }}{% else %} Реклама {% endif %}</a>
                 </div>
                 <div class="main_add_offer">
         			<a class="main_btn" href="#">Добавить рекламу</a>
@@ -58,41 +59,9 @@
 {#                            <option value="4">Показать 16</option>#}
 {#                        </select>#}
                     </div>
-                    {% include 'ad/pagination.html' with page=promotions %}
+                    {% include 'reclame/pagination.html' with page=promotions %}
                 </div>
                 <div class="latest_product_inner row">
-{#                    {% for promotion in promotions %}#}
-{#                        <div class="col-md-12">#}
-{#                            <div class="offer_post">#}
-{#                                <div class="offer_details">#}
-{#                                    {% if promotion.site %}#}
-{#                                    <a href="{{ promotion.site }}" target="_blank"><h2>{{ promotion.name }}</h2></a>#}
-{#                                    {% else %}#}
-{#                                    <a><h2>{{ promotion.name }}</h2></a>#}
-{#                                    {% endif %}#}
-{#                                    <p>{{promotion.description|truncatechars:220}}</p>#}
-{#                                    <div class="offer_info text-left">#}
-{#                                        <div class="offer_tag">#}
-{#                                            <a class="active" href="#">{{ promotion.category }}</a>#}
-{#                                        </div>#}
-{#                                        <ul class="offer_meta list">#}
-{#                                            <li><a href="/"><i class="lnr lnr-home"></i> Адрес: {{ promotion.country }}, {{ promotion.region }}, {{ promotion.town }}, {{ promotion.address }}</a></li>#}
-{#                                            {% if promotion.schedule_start and promotion.schedule_end %}#}
-{#                                            <li><a><i class="lnr lnr-clock"></i> Часы работы: {{ promotion.schedule_start|time:'H:i' }} - {{ promotion.schedule_end|time:'H:i' }}</a></li>#}
-{#                                            {% else %}#}
-{#                                            <li><a><i class="lnr lnr-calendar-full"></i> Часы работы: круглосуточно </a></li>#}
-{#                                            {% endif %}#}
-{#                                            {% if promotion.phone %}#}
-{#                                            <li><a><i class="lnr lnr-phone"></i> Телеофон: {{ promotion.phone }} </a></li>#}
-{#                                            {% endif %}#}
-{#                                        </ul>#}
-{#                                    </div>#}
-{#                                    <a href="{{ promotion.get_absolute_url }}" class="white_bg_btn">Подробнее</a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    {% endfor %}#}
-
                     {% for promotion in promotions %}
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="f_p_item">
@@ -109,7 +78,7 @@
                                     <h4>{{ promotion.name }}</h4>
                                 </a>
                                 <a href="{{ promotion.get_absolute_url }}">
-                                    <h4>{{ promotion.subcategory }}</h4>
+                                    <p>{{ promotion.description|truncatechars:60 }}</p>
                                 </a>
                                 <h5>{{ promotion.address }}</h5>
                             </div>
@@ -126,13 +95,18 @@
                         <div class="widgets_inner">
                             <ul class="list">
                                 <li {% if not category %} class="selected" {% endif %}>
-                                    <a href="{% url "ad:promotion_list" %}">Все</a>
+                                    <a href="{% url "reclame:promotion_list" %}">Все</a>
                                 </li>
-                                {% for c in categories %}
-                                    <li {% if category.slug == c.slug %} class="selected" {% endif %}>
-                                        <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                                {% recursetree categories %}
+                                    <li>
+                                        <a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
+                                        {% if not node.is_leaf_node %}
+                                            <ul class="list">
+                                                <li><a href="#">{{ children }}</a></li>
+                                            </ul>
+                                        {% endif %}
                                     </li>
-                                {% endfor %}
+                                {% endrecursetree %}
                             </ul>
                         </div>
                     </aside>
@@ -217,20 +191,20 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="../../static/js/jquery-3.2.1.min.js"></script>
-<script src="../../static/js/popper.js"></script>
-<script src="../../static/js/bootstrap.min.js"></script>
-<script src="../../static/js/stellar.js"></script>
-<script src="../../static/vendors/lightbox/simpleLightbox.min.js"></script>
-<script src="../../static/vendors/nice-select/js/jquery.nice-select.min.js"></script>
-<script src="../../static/vendors/isotope/imagesloaded.pkgd.min.js"></script>
-<script src="../../static/vendors/isotope/isotope-min.js"></script>
-<script src="../../static/vendors/owl-carousel/owl.carousel.min.js"></script>
-<script src="../../static/js/jquery.ajaxchimp.min.js"></script>
-<script src="../../static/vendors/counter-up/jquery.waypoints.min.js"></script>
-<script src="../../static/vendors/flipclock/timer.js"></script>
-<script src="../../static/vendors/counter-up/jquery.counterup.js"></script>
-<script src="../../static/js/mail-script.js"></script>
-<script src="../../static/js/theme.js"></script>
+{#<script src="../../../static/js/jquery-3.2.1.min.js"></script>#}
+{#<script src="../../../static/js/popper.js"></script>#}
+{#<script src="../../../static/js/bootstrap.min.js"></script>#}
+{#<script src="../../../static/js/stellar.js"></script>#}
+{#<script src="../../../static/vendors/lightbox/simpleLightbox.min.js"></script>#}
+{#<script src="../../../static/vendors/nice-select/js/jquery.nice-select.min.js"></script>#}
+{#<script src="../../../static/vendors/isotope/imagesloaded.pkgd.min.js"></script>#}
+{#<script src="../../../static/vendors/isotope/isotope-min.js"></script>#}
+{#<script src="../../../static/vendors/owl-carousel/owl.carousel.min.js"></script>#}
+{#<script src="../../../static/js/jquery.ajaxchimp.min.js"></script>#}
+{#<script src="../../../static/vendors/counter-up/jquery.waypoints.min.js"></script>#}
+{#<script src="../../../static/vendors/flipclock/timer.js"></script>#}
+{#<script src="../../../static/vendors/counter-up/jquery.counterup.js"></script>#}
+{#<script src="../../../static/js/mail-script.js"></script>#}
+{#<script src="../../../static/js/theme.js"></script>#}
 
 {% endblock content %}
