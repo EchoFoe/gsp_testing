@@ -75,7 +75,7 @@
                             <li><a><i class="lnr lnr-envelope"></i> E-mail: {{ promotion.email }}</a></li>
                         {% endif %}
                     <hr>
-                        {% for m in promotion_details_main %}
+                        {% for m in promotion.promotiondetails_set.all %}
                             {% if m.schedule_start and m.schedule_end %}
                                 <li><a><i class="lnr lnr-home"></i> Адрес: {{ promotion.country }}, {{ promotion.region }}, г. {{ promotion.town }}, {{ m.address }}</a>
                                 <li><a><i class="lnr lnr-clock"></i> Часы работы (Пн - Пт): {{ m.schedule_start|time:'H:i' }} - {{ m.schedule_end|time:'H:i' }}</a></li>
@@ -100,34 +100,34 @@
                             {% if m.phone %}
                                 <li><a><i class="lnr lnr-phone"></i> Телеофон: {{ m.phone }} </a></li>
                             {% endif %}
+                            <hr>
                         {% endfor %}
-                    <hr>
-                        {% for m in promotion_details_not_main %}
-                            {% if m.schedule_start and m.schedule_end %}
-                                <li><a><i class="lnr lnr-home"></i> Адрес: {{ promotion.country }}, {{ promotion.region }}, г. {{ promotion.town }}, {{ m.address }}</a>
-                                <li><a><i class="lnr lnr-clock"></i> Часы работы (Пн - Пт): {{ m.schedule_start|time:'H:i' }} - {{ m.schedule_end|time:'H:i' }}</a></li>
-                                {% else %}
-                                    <li><a><i class="lnr lnr-calendar-full"></i> Часы работы: круглосуточно </a></li>
-                            {% endif %}
-                            {% if m.weekend_start and m.weekend_end %}
-                                <li><a><i class="lnr lnr-clock"></i> Часы работы (Суббота): {{ m.weekend_start|time:'H:i' }} - {{ m.weekend_end|time:'H:i' }}</a></li>
-                                {% else %}
-                                    <li><a><i class="lnr lnr-calendar-full"></i> Суббота - выходной день </a></li>
-                            {% endif %}
-                            {% if m.weekend2_start and m.weekend2_end %}
-                                <li><a><i class="lnr lnr-clock"></i> Часы работы (Воскресенье): {{ m.weekend2_start|time:'H:i' }} - {{ m.weekend2_end|time:'H:i' }}</a></li>
-                                {% else %}
-                                    <li><a><i class="lnr lnr-calendar-full"></i> Воскресенье - выходной день </a></li>
-                            {% endif %}
-                            {% if m.dinner_time_start and m.dinner_time_end %}
-                                <li><a><i class="lnr lnr-dinner"></i> Обеденный перерыв: {{ m.dinner_time_start|time:'H:i' }} - {{ m.dinner_time_end|time:'H:i' }}</a></li>
-                                {% else %}
-                                    <li><a><i class="lnr lnr-dinner"></i> Без обеденного перерыва </a></li>
-                            {% endif %}
-                            {% if m.phone %}
-                                <li><a><i class="lnr lnr-phone"></i> Телеофон: {{ m.phone }} </a></li>
-                            {% endif %}
-                        {% endfor %}
+{#                        {% for m in promotion_details_not_main %}#}
+{#                            {% if m.schedule_start and m.schedule_end %}#}
+{#                                <li><a><i class="lnr lnr-home"></i> Адрес: {{ promotion.country }}, {{ promotion.region }}, г. {{ promotion.town }}, {{ m.address }}</a>#}
+{#                                <li><a><i class="lnr lnr-clock"></i> Часы работы (Пн - Пт): {{ m.schedule_start|time:'H:i' }} - {{ m.schedule_end|time:'H:i' }}</a></li>#}
+{#                                {% else %}#}
+{#                                    <li><a><i class="lnr lnr-calendar-full"></i> Часы работы: круглосуточно </a></li>#}
+{#                            {% endif %}#}
+{#                            {% if m.weekend_start and m.weekend_end %}#}
+{#                                <li><a><i class="lnr lnr-clock"></i> Часы работы (Суббота): {{ m.weekend_start|time:'H:i' }} - {{ m.weekend_end|time:'H:i' }}</a></li>#}
+{#                                {% else %}#}
+{#                                    <li><a><i class="lnr lnr-calendar-full"></i> Суббота - выходной день </a></li>#}
+{#                            {% endif %}#}
+{#                            {% if m.weekend2_start and m.weekend2_end %}#}
+{#                                <li><a><i class="lnr lnr-clock"></i> Часы работы (Воскресенье): {{ m.weekend2_start|time:'H:i' }} - {{ m.weekend2_end|time:'H:i' }}</a></li>#}
+{#                                {% else %}#}
+{#                                    <li><a><i class="lnr lnr-calendar-full"></i> Воскресенье - выходной день </a></li>#}
+{#                            {% endif %}#}
+{#                            {% if m.dinner_time_start and m.dinner_time_end %}#}
+{#                                <li><a><i class="lnr lnr-dinner"></i> Обеденный перерыв: {{ m.dinner_time_start|time:'H:i' }} - {{ m.dinner_time_end|time:'H:i' }}</a></li>#}
+{#                                {% else %}#}
+{#                                    <li><a><i class="lnr lnr-dinner"></i> Без обеденного перерыва </a></li>#}
+{#                            {% endif %}#}
+{#                            {% if m.phone %}#}
+{#                                <li><a><i class="lnr lnr-phone"></i> Телеофон: {{ m.phone }} </a></li>#}
+{#                            {% endif %}#}
+{#                        {% endfor %}#}
                     </ul>
                     <p>{{promotion.description}}</p>
                     {% if promotion.site %}
