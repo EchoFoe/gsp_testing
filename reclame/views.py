@@ -3,6 +3,8 @@ from .models import Category, Promotion, PromotionDetails
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
+# Это обработчик странички с рекламой. Тут пагинация. По дефолту поставил 50 итемов.
+# Да, и Алина сука.
 def promotion_list(request, category_slug=None):
     category = None
     categories = Category.objects.filter(is_active=True)
@@ -25,9 +27,11 @@ def promotion_list(request, category_slug=None):
 
 def promotion_detail(request, id, slug):
     promotion = get_object_or_404(Promotion, id=id, slug=slug, is_active=True)
+    promotion_details = get_object_or_404(PromotionDetails, id=id, is_active=True)
     promotion_details_main = PromotionDetails.objects.filter(is_main=True, is_active=True)
     promotion_details_not_main = PromotionDetails.objects.filter(is_not_main=True, is_active=True)
     return render(request, 'reclame/detail.html', {'promotion': promotion,
+                                                   'promotion_details': promotion_details,
                                                    'promotion_details_main': promotion_details_main,
                                                    'promotion_details_not_main': promotion_details_not_main,
                                                    })

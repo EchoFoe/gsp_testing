@@ -39,12 +39,12 @@
                     {% endif %}
                     <h3>Поля для публикации Вашего заказа в системе:</h3>
                     <form class="row login_form" action="{% url 'job:register_job' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
-                        <div class="col-md-12 input-group-icon mt-10">
-                            <div class="form-select valid">
-                                <span class="current">Выберите категорию работ *:</span>
-                                {{ offer_form.category }}
-                            </div>
-                        </div>
+{#                        <div class="col-md-12 input-group-icon mt-10">#}
+{#                            <div class="form-select valid">#}
+{#                                <span class="current">Выберите категорию работ *:</span>#}
+{#                                {{ offer_form.category }}#}
+{#                            </div>#}
+{#                        </div>#}
                         <br>
                         <div class="col-md-4 form-group">
                             <input class="form-control-offer valid" name="{{ offer_form.first_name.name }}" value="{{ request.POST.name }}" id="first_name" required type="text" onfocus="this.placeholder = 'Это поле обязательно'" onblur="this.placeholder = 'Введите Ваше имя'" placeholder="Ваше имя *">

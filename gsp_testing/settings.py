@@ -123,15 +123,15 @@ LOGOUT_URL = 'logout'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = 'gspcompany46@gmail.com'
+EMAIL_HOST_PASSWORD = 'divine2020'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-FROM_EMAIL = ""
-EMAIL_ADMIN = ""
+FROM_EMAIL = "gspcompany46@gmail.com"
+EMAIL_ADMIN = "gspcompany46@gmail.com"
 
-# try:
-#     from .settings_prod import *
-# except:
-#     pass
+try:
+    from .settings_prod import *
+except:
+    pass
