@@ -15,10 +15,10 @@ class OfferRegistrationForm(forms.ModelForm):
     start_time = forms.DateField(required=False)
     end_time = forms.DateField(required=False)
     description = forms.Textarea()
-    category = TreeNodeChoiceField(queryset=Category.objects.filter(is_active=True))
+    # category = TreeNodeChoiceField(queryset=Category.objects.filter(is_active=True))
     image = forms.ImageField(required=False)
 
     class Meta:
         model = Offer
-        fields = ('first_name', 'last_name', 'middle_name', 'phone', 'email', 'name', 'image', 'description', 'price', 'start_time', 'end_time', 'category')
-        exclude = ['created', 'updated']
+        fields = ('first_name', 'last_name', 'middle_name', 'phone', 'email', 'name', 'image', 'description', 'price', 'start_time', 'end_time')
+        exclude = ['created', 'updated', 'category']
