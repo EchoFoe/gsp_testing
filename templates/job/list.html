@@ -3,10 +3,7 @@
 {% load mptt_tags %}
 
 {% block title %}
-    {% if category %}
-        {{ category.name }}
-        {% else %}Заказы
-    {% endif %}
+    {% if category %}{{ category.name }}{% else %}Заказы{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -22,7 +19,7 @@
                     <a href="#">{% if category %}{{ category.name }}{% else %}Заказы{% endif %}</a>
                 </div>
                 <div class="main_add_offer">
-        			<a class="main_btn" href="#">Добавить заказ</a>
+        			<a class="main_btn" href="{% url 'job:register_job' %}">Добавить заказ</a>
         		</div>
             </div>
         </div>

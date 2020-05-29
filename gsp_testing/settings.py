@@ -25,12 +25,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mptt',
+
     'job.apps.JobConfig',
     'reclame.apps.ReclameConfig',
 
     'mygsp.apps.MygspConfig',
     'ad.apps.AdConfig',
 
+    'utils',
+    'emails.apps.EmailsConfig',
 ]
 
 MIDDLEWARE = [
@@ -125,7 +128,10 @@ EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-try:
-    from .settings_prod import *
-except:
-    pass
+FROM_EMAIL = ""
+EMAIL_ADMIN = ""
+
+# try:
+#     from .settings_prod import *
+# except:
+#     pass

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Теплотрон</title>
+</head>
+<body>
+    <h3>Здравствуйте!</h3>
+    <p>Ваша заявка получена! Дождитесь ответа оператора. Ниже представлены детали Вашей завяки.</p>
+    <ul>
+        <li>
+            <b>ФИО:</b>{{ new_offer.last_name }} {{ new_offer.first_name }} {{ new_offer.middle_name }}
+        </li>
+        <li>
+            <b>Наименование работы:</b>{{ new_offer.name }}
+        </li>
+        <li>
+            <b>Детали заказа:</b>{{ new_offer.description }}
+        </li>
+        <li>
+            <b>Бюджет:</b>{{ new_offer.price }} руб.
+        </li>
+    </ul>
+</body>
+</html>

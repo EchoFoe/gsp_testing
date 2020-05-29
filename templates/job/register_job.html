@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Добавить заказ, тендер | ГСП{% endblock %}
+
+{% block content %}
+
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+            <div class="banner_content text-center">
+                <h2>Опубликуйте свой заказ или тендер</h2>
+                <div class="page_link">
+                    <a href={% url 'job:offer_list' %}>Назад</a>
+                    <a href='#'>Добавить заказ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--================Login Box Area =================-->
+<section class="login_box_area p_120">
+    <div class="container">
+        <div class="row">
+{#            <div class="col-lg-6">#}
+{#                <div class="login_box_img">#}
+{#                    <img class="img-fluid" src="{% static 'img/login.jpg' %}" alt="">#}
+{#                </div>#}
+{#            </div>#}
+            <div class="col-lg-12">
+                <div class="job_form_inner">
+                    {% if offer_form.errors %}
+                        <p class="alert alert-danger">Введите данные для формы правильно</p>
+                        <p>Пожалуйста, попробуйте ввести другие данные</p>
+                            {% else %}
+                        <p>Пожалуйста, используйте форму ниже для добавления заказа:</p>
+                        <p>* отмечены поля для обязательного заполнения</p>
+                    {% endif %}
+                    <h3>Поля для публикации Вашего заказа в системе:</h3>
+                    <form class="row login_form" action="{% url 'job:register_job' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+                        <div class="col-md-12 input-group-icon mt-10">
+                            <div class="form-select valid">
+                                <span class="current">Выберите категорию работ *:</span>
+                                {{ offer_form.category }}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-md-4 form-group">
+                            <input class="form-control-offer valid" name="{{ offer_form.first_name.name }}" value="{{ request.POST.name }}" id="first_name" required type="text" onfocus="this.placeholder = 'Это поле обязательно'" onblur="this.placeholder = 'Введите Ваше имя'" placeholder="Ваше имя *">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input class="form-control-offer valid" name="{{ offer_form.last_name.name }}" value="{{ request.POST.name }}" id="last_name" required type="text" onfocus="this.placeholder = 'Это поле обязательно'" onblur="this.placeholder = 'Введите Вашу фамилию'" placeholder="Ваша фамилия *">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input class="form-control-offer" name="{{ offer_form.middle_name.name }}" value="{{ request.POST.name }}" id="middle_name" required type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Введите Ваше отчество'" placeholder="Ваше отчество">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input class="form-control-offer valid" name="{{ offer_form.phone.name }}" value="{{ request.POST.name }}" id="phone" required type="number" onfocus="this.placeholder = 'Это поле обязательно'" onblur="this.placeholder = 'Введите Ваш номер телефона'" placeholder="Ваш номер телефона *">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input class="form-control-offer valid" name="{{ offer_form.email.name }}" value="{{ request.POST.name }}" id="email" required type="email" onfocus="this.placeholder = 'Это поле обязательно'" onblur="this.placeholder = 'Введите Ваш email'" placeholder="Ваша электронная почта *">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input class="form-control-offer valid" name="{{ offer_form.name.name }}" value="{{ request.POST.name }}" id="name" required type="text" onfocus="this.placeholder = 'Это поле обязательно'" onblur="this.placeholder = 'Ваш заказ'" placeholder="Что нужно сделать? *">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <textarea class="form-control-offer valid" name="{{ offer_form.description.name }}" id="description" cols="30" rows="9" required type="text" onfocus="this.placeholder = 'Это поле обязательно'" onblur="this.placeholder = 'Объём и виды работ, пожелания и требования'" placeholder="Укажите объём и виды работ, опишите пожелания и требования *"></textarea>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <span class="current">Когда начать работы?</span>
+                            <input class="form-control-offer" name="{{ offer_form.start_time.name }}" value="{{ request.POST.name }}" id="start_time" required type="date" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Дата начала работ'" placeholder="Когда начать работы?">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <span class="current">Когда закончить работы?</span>
+                            <input class="form-control-offer" name="{{ offer_form.end_time.name }}" value="{{ request.POST.name }}" id="end_time" required type="date" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Дата окончания работ'" placeholder="Когда закончить работы?">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input class="form-control-offer valid" name="{{ offer_form.price.name }}" value="{{ request.POST.name }}" id="price" required type="number" onfocus="this.placeholder = 'Это поле обязательно'" onblur="this.placeholder = 'Введите сумму, которую Вы готовы заплатить за работу'" placeholder="Укажите бюджет *">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <span class="current">Приложите фотографию объекта</span>
+{#                            <input class="form-control-offer" type="file" id="image" name="{{ offer_form.image }} {{ offer_form.image_file }}">#}
+                            <input type="file" class="form-control-offer" accept="image/*" id="id_photo" name="{{ offer_form.image.name }}" placeholder="Фотография">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <button type="submit" value="submit" class="btn submit_btn">Опубликовать заказ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Login Box Area =================-->
+
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ГСП</title>
+</head>
+<body>
+    <h3>Здравствуйте!</h3>
+    <p>У нас новая заявка</p>
+    <hr>
+    <ul>
+        <li>
+            <b>ФИО:</b>{{ new_offer.last_name }} {{ new_offer.first_name }} {{ new_offer.middle_name }}
+        </li>
+        <li>
+            <b>Е-мейл:</b>{{ new_offer.email }}
+        </li>
+        <li>
+            <b>Телефон:</b>{{ new_offer.phone }}
+        </li>
+        <li>
+            <b>Категория:</b>{{ new_offer.category }}
+        </li>
+        <li>
+            <b>Наименование работы:</b>{{ new_offer.name }}
+        </li>
+        <li>
+            <b>Детали заказа:</b>{{ new_offer.description }}
+        </li>
+        <li>
+            <b>Бюджет:</b>{{ new_offer.price }} руб
+        </li>
+    </ul>
+</body>
+</html>

@@ -53,7 +53,7 @@ class Offer(models.Model):
         return "\n".join([p.name for p in self.category.all()])
 
     class Meta:
-        ordering = ('-created', 'name')
+        ordering = ('-created', 'name',)
         index_together = (('id', 'slug'),)
         verbose_name = 'Предложение о работе'
         verbose_name_plural = 'Предложения о работе'
