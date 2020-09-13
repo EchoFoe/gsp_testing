@@ -1,0 +1,1108 @@
+[
+{
+    "model": "account_master.master",
+    "pk": 1,
+    "fields": {
+        "user": 2,
+        "slug": null,
+        "middle_name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0435\u0432\u0438\u0447",
+        "phone": "+7-950-879-08-81",
+        "date_of_birth": "1990-06-25",
+        "photo": "masters/2020/03/24/pavel_echo.jpg",
+        "description": "\u0412\u0435\u0431-\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442, \u043d\u0435 \u0441\u0430\u043c\u044b\u0439 \u043b\u0443\u0447\u0448\u0438\u0439.",
+        "available": false,
+        "created": "2020-03-24",
+        "updated": "2020-03-24"
+    }
+},
+{
+    "model": "account_master.master",
+    "pk": 2,
+    "fields": {
+        "user": 3,
+        "slug": null,
+        "middle_name": null,
+        "phone": null,
+        "date_of_birth": null,
+        "photo": "",
+        "description": "",
+        "available": false,
+        "created": "2020-05-16",
+        "updated": "2020-05-16"
+    }
+},
+{
+    "model": "job.category",
+    "pk": 1,
+    "fields": {
+        "name": "\u0420\u0435\u043c\u043e\u043d\u0442 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u0438\u043a\u0438",
+        "slug": "remont-elektroniki",
+        "parent": null,
+        "is_active": true,
+        "created": "2020-04-09",
+        "updated": "2020-04-09",
+        "lft": 1,
+        "rght": 12,
+        "tree_id": 1,
+        "level": 0
+    }
+},
+{
+    "model": "job.category",
+    "pk": 2,
+    "fields": {
+        "name": "\u0420\u0435\u043c\u043e\u043d\u0442 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u043e\u0432",
+        "slug": "remont-telefonov",
+        "parent": 1,
+        "is_active": true,
+        "created": "2020-04-09",
+        "updated": "2020-04-09",
+        "lft": 10,
+        "rght": 11,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "job.category",
+    "pk": 3,
+    "fields": {
+        "name": "\u0420\u0435\u043c\u043e\u043d\u0442 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043e\u0432",
+        "slug": "remont-kompyuterov",
+        "parent": 1,
+        "is_active": true,
+        "created": "2020-04-09",
+        "updated": "2020-04-09",
+        "lft": 2,
+        "rght": 3,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "job.category",
+    "pk": 4,
+    "fields": {
+        "name": "\u0420\u0435\u043c\u043e\u043d\u0442 \u043f\u043b\u0430\u043d\u0448\u0435\u0442\u043e\u0432",
+        "slug": "remont-planshetov",
+        "parent": 1,
+        "is_active": true,
+        "created": "2020-04-09",
+        "updated": "2020-04-09",
+        "lft": 4,
+        "rght": 5,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "job.category",
+    "pk": 5,
+    "fields": {
+        "name": "\u0420\u0435\u043c\u043e\u043d\u0442 \u0442\u0435\u043b\u0435\u0432\u0438\u0437\u043e\u0440\u043e\u0432",
+        "slug": "remont-televizorov",
+        "parent": 1,
+        "is_active": true,
+        "created": "2020-04-09",
+        "updated": "2020-04-09",
+        "lft": 8,
+        "rght": 9,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "job.category",
+    "pk": 6,
+    "fields": {
+        "name": "\u0420\u0435\u043c\u043e\u043d\u0442 \u043f\u0440\u043e\u0447\u0435\u0439 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u0438\u043a\u0438",
+        "slug": "remont-prochej-elektroniki",
+        "parent": 1,
+        "is_active": true,
+        "created": "2020-04-09",
+        "updated": "2020-04-09",
+        "lft": 6,
+        "rght": 7,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 1,
+    "fields": {
+        "first_name": "\u041f\u0430\u0432\u0435\u043b",
+        "last_name": "\u042d\u0445\u043e",
+        "middle_name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0435\u0432\u0438\u0447",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "\u0417\u0430\u043c\u0435\u043d\u0430 \u0438\u043b\u0438 \u0440\u0435\u043c\u043e\u043d\u0442 \u043c\u043e\u0434\u0443\u043b\u044f \u0432\u0430\u0439\u0444\u0430\u0439 \u043d\u0430 \u0430\u0439\u0444\u043e\u043d\u0435 6",
+        "slug": "zamena-ili-remont-modulya-vajfaj-na-ajfone-6",
+        "image": "offers/2020/04/09/Apple_iPhone_7_black.jpg",
+        "description": "\u0421\u043c\u0430\u0440\u0442\u0444\u043e\u043d \u043f\u043e\u0442\u0435\u0440\u043f\u0435\u043b \u043f\u0430\u0434\u0435\u043d\u0438\u0435 \u0441 \u0431\u043e\u043b\u044c\u0448\u043e\u0439 \u0432\u044b\u0441\u043e\u0442\u044b. \u0427\u0443\u0434\u043e\u043c \u0432\u044b\u0436\u0438\u043b, \u043d\u043e \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u0432\u0430\u0439-\u0444\u0430\u0439. \u0422\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u0437\u0430\u043c\u0435\u043d\u0430 \u0438\u043b\u0438 \u0440\u0435\u043c\u043e\u043d\u0442.",
+        "price": "2000",
+        "start_time": "2020-05-01",
+        "end_time": "2020-06-01",
+        "available": true,
+        "created": "2020-04-09",
+        "updated": "2020-04-09",
+        "category": [
+            2
+        ]
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 2,
+    "fields": {
+        "first_name": "\u041f\u0430\u0432\u0435\u043b",
+        "last_name": "\u042d\u0445\u043e",
+        "middle_name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0435\u0432\u0438\u0447",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "\u0411\u043b\u043e\u043a \u043f\u0438\u0442\u0430\u043d\u0438\u044f \u043d\u0430 500 \u0412\u0442 \u0432\u044b\u0448\u0435\u043b \u0438\u0437 \u0441\u0442\u0440\u043e\u044f.",
+        "slug": "blok-pitaniya-na-500-vt-vyshel-iz-stroya",
+        "image": "",
+        "description": "\u0411\u043b\u043e\u043a \u043f\u0438\u0442\u0430\u043d\u0438\u044f \u0432\u044b\u0448\u0435\u043b \u0438\u0437 \u0441\u0442\u0440\u043e\u044f \u0438 \u041f\u041a \u043d\u0435 \u0432\u043a\u043b\u044e\u0447\u0430\u0435\u0442\u0441\u044f. \u041d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u0430 \u0434\u0438\u0430\u0433\u043d\u043e\u0441\u0442\u0438\u043a\u0430, \u0437\u0430\u043c\u0435\u043d\u0430 \u0438 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u0411\u041f \u043a \u041f\u041a.",
+        "price": "2500",
+        "start_time": "2020-06-26",
+        "end_time": "2020-06-30",
+        "available": true,
+        "created": "2020-05-28",
+        "updated": "2020-05-28",
+        "category": [
+            3
+        ]
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 3,
+    "fields": {
+        "first_name": "\u0410\u043d\u043d\u0430",
+        "last_name": "\u0413\u043e\u0440\u0431\u0443\u043b\u0438\u043d\u0430",
+        "middle_name": "\u0412\u044f\u0447\u0435\u0441\u043b\u0430\u0432\u043e\u0432\u043d\u0430",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "\u041f\u043e\u043a\u0440\u0430\u0441\u043a\u0430 \u0441\u0442\u0435\u043d \u0438 \u043f\u043e\u0442\u043e\u043b\u043a\u0430",
+        "slug": "",
+        "image": "",
+        "description": "\u041f\u0440\u043e\u0433\u0440\u0443\u043d\u0442\u043e\u0432\u0430\u0442\u044c \u0438 \u041f\u043e\u043a\u0440\u0430\u0441\u0438\u0442\u044c \u0441\u0442\u0435\u043d\u044b 450\u043c. \u0438 \u043f\u043e\u043b 150\u043c. \u0432 \u0434\u0432\u0430 \u0441\u043b\u043e\u044f. \u041e\u0444\u0438\u0441\u043d\u043e\u0435 \u0437\u0434\u0430\u043d\u0438\u0435.",
+        "price": "50000",
+        "start_time": "2020-05-31",
+        "end_time": "2020-06-15",
+        "available": false,
+        "created": "2020-05-28",
+        "updated": "2020-05-28",
+        "category": []
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 4,
+    "fields": {
+        "first_name": "\u0410\u043d\u043d\u0430",
+        "last_name": "\u0413\u043e\u0440\u0431\u0443\u043b\u0438\u043d\u0430",
+        "middle_name": "\u0412\u044f\u0447\u0435\u0441\u043b\u0430\u0432\u043e\u0432\u043d\u0430",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "\u041f\u043e\u043a\u0440\u0430\u0441\u043a\u0430 \u0441\u0442\u0435\u043d \u0438 \u043f\u043e\u0442\u043e\u043b\u043a\u0430",
+        "slug": "",
+        "image": "",
+        "description": "\u041f\u0440\u043e\u0433\u0440\u0443\u043d\u0442\u043e\u0432\u0430\u0442\u044c \u0438 \u041f\u043e\u043a\u0440\u0430\u0441\u0438\u0442\u044c \u0441\u0442\u0435\u043d\u044b 450\u043c. \u0438 \u043f\u043e\u043b 150\u043c. \u0432 \u0434\u0432\u0430 \u0441\u043b\u043e\u044f. \u041e\u0444\u0438\u0441\u043d\u043e\u0435 \u0437\u0434\u0430\u043d\u0438\u0435.",
+        "price": "50000",
+        "start_time": "2020-05-31",
+        "end_time": "2020-06-15",
+        "available": false,
+        "created": "2020-05-28",
+        "updated": "2020-05-28",
+        "category": []
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 5,
+    "fields": {
+        "first_name": "\u0410\u043d\u043d\u0430",
+        "last_name": "\u0413\u043e\u0440\u0431\u0443\u043b\u0438\u043d\u0430",
+        "middle_name": "\u0412\u044f\u0447\u0435\u0441\u043b\u0430\u0432\u043e\u0432\u043d\u0430",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "\u041f\u043e\u043a\u0440\u0430\u0441\u043a\u0430 \u0441\u0442\u0435\u043d \u0438 \u043f\u043e\u0442\u043e\u043b\u043a\u0430",
+        "slug": "",
+        "image": "",
+        "description": "\u041f\u0440\u043e\u0433\u0440\u0443\u043d\u0442\u043e\u0432\u0430\u0442\u044c \u0438 \u041f\u043e\u043a\u0440\u0430\u0441\u0438\u0442\u044c \u0441\u0442\u0435\u043d\u044b 450\u043c. \u0438 \u043f\u043e\u043b 150\u043c. \u0432 \u0434\u0432\u0430 \u0441\u043b\u043e\u044f. \u041e\u0444\u0438\u0441\u043d\u043e\u0435 \u0437\u0434\u0430\u043d\u0438\u0435.",
+        "price": "50000",
+        "start_time": "2020-05-31",
+        "end_time": "2020-06-15",
+        "available": false,
+        "created": "2020-05-28",
+        "updated": "2020-05-28",
+        "category": []
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 6,
+    "fields": {
+        "first_name": "\u0418\u0433\u043e\u0440\u044c",
+        "last_name": "\u0413\u0430\u0440\u0435\u0446",
+        "middle_name": "\u0412\u044b\u044f\u0447\u0435\u0441\u043b\u0430\u0432\u043e\u0432\u0447\u0438",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "\u0421\u043b\u043e\u043c\u0430\u043b\u0441\u044f \u044d\u043b\u0435\u043a\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0447\u0430\u0439\u043d\u0438\u043a \u0444\u0438\u0440\u043c\u044b \"Vitek\"",
+        "slug": "slomalsya-elektricheskij-chajnik-firmy-vitek",
+        "image": "",
+        "description": "\u041d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u043f\u0440\u043e\u0432\u0435\u0441\u0442\u0438 \u0434\u0438\u0430\u0433\u043d\u043e\u0441\u0442\u0438\u043a\u0443 \u043f\u043e\u043b\u043e\u043c\u043a\u0438 \u0438 \u043f\u0440\u0438\u0432\u0435\u0441\u0442\u0438 \u0432 \u0440\u0430\u0431\u043e\u0442\u043e\u0441\u043f\u043e\u0441\u043e\u0431\u043d\u043e\u0435 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0447\u0430\u0439\u043d\u0438\u043a.",
+        "price": "500",
+        "start_time": "2020-05-29",
+        "end_time": "2020-05-30",
+        "available": true,
+        "created": "2020-05-28",
+        "updated": "2020-05-28",
+        "category": [
+            1
+        ]
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 7,
+    "fields": {
+        "first_name": "\u0414\u0430\u043d\u0438\u043b",
+        "last_name": "\u0410\u0433\u0430\u0440\u043a\u043e\u0432",
+        "middle_name": "\u042e\u0440\u044c\u0435\u0432\u0438\u0447",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "\u041d\u0435 \u0432\u043a\u043b\u044e\u0447\u0430\u0435\u0442\u0441\u044f \u0442\u0435\u043b\u0435\u0444\u043e\u043d iPhone 7 plus",
+        "slug": "ne-vklyuchaetsya-telefon-iphone-7-plus",
+        "image": "",
+        "description": "\u041f\u043e\u0441\u043b\u0435 \u043f\u043e\u043f\u0430\u0434\u0430\u043d\u0438\u044f \u0432\u043b\u0430\u0433\u0438 \u043d\u0430 \u0442\u0435\u043b\u0435\u0444\u043e\u043d, \u043e\u043d \u043d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442. \u041d\u0443\u0436\u043d\u0430 \u0434\u0438\u0430\u0433\u043d\u043e\u0441\u0442\u0438\u043a\u0430 \u0438 \u0440\u0435\u043c\u043e\u043d\u0442.",
+        "price": "2000",
+        "start_time": "2020-05-30",
+        "end_time": "2020-05-31",
+        "available": true,
+        "created": "2020-05-28",
+        "updated": "2020-05-28",
+        "category": [
+            2
+        ]
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 8,
+    "fields": {
+        "first_name": "\u0410\u043b\u0435\u043a\u0441\u0435\u0439",
+        "last_name": "\u0413\u043c\u044b\u0440\u0430\u043a",
+        "middle_name": "\u0418\u0433\u043e\u0440\u0435\u0432\u0438\u0447",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "\u0422\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u043f\u043e\u0447\u0438\u043d\u043a\u0430 \u0442\u0435\u043b\u0435\u0432\u0438\u0437\u043e\u0440 Samsung",
+        "slug": "trebuetsya-pochinka-televizor-samsung",
+        "image": "offers/2020/05/28/superthumb.jpg",
+        "description": "\u0414\u043e \u043d\u0435\u0434\u0430\u0432\u043d\u0435\u0433\u043e \u0432\u0440\u0435\u043c\u0435\u043d\u0438 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435 \u043d\u0430 \u044d\u043a\u0440\u0430\u043d\u0435 \u0442\u0435\u043b\u0435\u0432\u0438\u0437\u043e\u0440\u0430 \u0442\u0435\u043c\u043d\u0435\u043b\u043e. \u0421\u0435\u0439\u0447\u0430\u0441 \u043d\u0435\u0442\u0443 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f \u0432\u043e\u043e\u0431\u0449\u0435. \u0417\u0432\u0443\u043a \u043f\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442.",
+        "price": "5000",
+        "start_time": "2020-06-01",
+        "end_time": "2020-06-02",
+        "available": true,
+        "created": "2020-05-28",
+        "updated": "2020-05-28",
+        "category": [
+            5
+        ]
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 9,
+    "fields": {
+        "first_name": "\u041f\u0430\u0432\u0435\u043b",
+        "last_name": "\u0413\u0430\u0440\u0435\u0446",
+        "middle_name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0435\u0432\u0438\u0447",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "\u041f\u043e\u0447\u0438\u043d\u0438\u0442\u044c \u043d\u043e\u0443\u0442\u0431\u0443\u043a Acer Aspire 5",
+        "slug": "pochinit-noutbuk-acer-aspire-5",
+        "image": "",
+        "description": "\u041d\u0430 \u043d\u043e\u0443\u0442\u0431\u0443\u043a \u043f\u0440\u043e\u043b\u0438\u043b \u0436\u0438\u0434\u043a\u043e\u0441\u0442\u044c. \u041d\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u043a\u043b\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0430 \u0438 \u044d\u043a\u0440\u0430\u043d. \u041d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u0432\u043c\u0435\u0441\u0442\u0435 \u0441 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u043e\u043c \u043f\u0440\u0438\u0432\u0435\u0441\u0442\u0438 \u0432 \u0440\u0430\u0431\u043e\u0447\u0435\u0435 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435.",
+        "price": "15000",
+        "start_time": "2020-05-31",
+        "end_time": "2020-05-31",
+        "available": true,
+        "created": "2020-05-28",
+        "updated": "2020-05-28",
+        "category": [
+            3
+        ]
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 10,
+    "fields": {
+        "first_name": "\u0410\u043b\u0435\u043a\u0441\u0435\u0439",
+        "last_name": "\u041a\u043e\u043d\u043e\u0440\u0435\u0432",
+        "middle_name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0435\u0432\u0438\u0447",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "\u041f\u043e\u0447\u0438\u043d\u0438\u0442\u044c \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440",
+        "slug": "pochinit-kompyuter",
+        "image": "",
+        "description": "\u041d\u0435 \u0432\u043a\u043b\u044e\u0447\u0430\u0435\u0442\u0441\u044f \u041f\u041a. \u041d\u0443\u0436\u043d\u0430 \u0441\u043f\u0435\u0440\u0432\u0430 \u0434\u0438\u0430\u0433\u043d\u043e\u0441\u0442\u0438\u043a\u0430.",
+        "price": "1000",
+        "start_time": "2020-05-31",
+        "end_time": "2020-05-31",
+        "available": true,
+        "created": "2020-05-28",
+        "updated": "2020-05-28",
+        "category": [
+            3
+        ]
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 11,
+    "fields": {
+        "first_name": "\u041e\u043b\u0435\u0433",
+        "last_name": "\u0429\u0430\u0432\u043b\u0435\u0432",
+        "middle_name": "\u0418\u0433\u043e\u0440\u0435\u0432\u0438\u0447",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "\u0417\u0430\u043c\u0435\u043d\u0430 \u044d\u043a\u0440\u0430\u043d\u0430",
+        "slug": "zamena-ekrana",
+        "image": "offers/2020/05/28/_116317-560.jpg",
+        "description": "\u042d\u043a\u0440\u0430\u043d \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0430 \u043f\u043e\u043b\u043d\u043e\u0441\u0442\u044c\u044e \u0440\u0430\u0437\u0431\u0438\u0442. \u041d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u0430 \u0437\u0430\u043c\u0435\u043d\u0430 \u0441 \u0412\u0430\u0448\u0438\u043c \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u043e\u043c.",
+        "price": "3000",
+        "start_time": "2020-06-01",
+        "end_time": "2020-06-02",
+        "available": true,
+        "created": "2020-05-28",
+        "updated": "2020-05-28",
+        "category": [
+            2
+        ]
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 12,
+    "fields": {
+        "first_name": "\u041d\u0438\u043a\u043e\u043b\u0430\u0439",
+        "last_name": "\u041a\u043e\u043d\u043e\u0440\u0435\u0432",
+        "middle_name": "\u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432\u0438\u0447",
+        "phone": "8950879081",
+        "email": "aspirpd@gmail.com",
+        "name": "\u0417\u0430\u043c\u0435\u043d\u0430 \u044d\u043a\u0440\u0430\u043d\u0430 \u043d\u0430 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0435 Huawei 500 lite",
+        "slug": "zamena-ekrana-na-telefone-huawei-500-lite",
+        "image": "offers/2020/05/28/_116317-560_mln2tq9.jpg",
+        "description": "\u0420\u0430\u0437\u0431\u0438\u043b\u0441\u044f \u044d\u043a\u0440\u0430\u043d \u043d\u0430 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0435. \u041e\u043d \u0432\u043a\u043b\u044e\u0447\u0430\u0435\u0442\u0441\u044f, \u043d\u043e \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f \u043d\u0435\u0442. \u041d\u0443\u0436\u043d\u043e \u0437\u0430\u043c\u0435\u043d\u0438\u0442\u044c \u044d\u043a\u0440\u0430\u043d \u043d\u0430 \u043e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439! \u0421 \u0412\u0430\u0448\u0438\u043c \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u043e\u043c \u0438 \u0440\u0430\u0431\u043e\u0442\u043e\u0439.",
+        "price": "9000",
+        "start_time": "2020-06-02",
+        "end_time": "2020-06-03",
+        "available": true,
+        "created": "2020-05-28",
+        "updated": "2020-05-28",
+        "category": [
+            2
+        ]
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 13,
+    "fields": {
+        "first_name": "Pavel",
+        "last_name": "Pavel",
+        "middle_name": "Pavel",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "PavelPavelPavel",
+        "slug": "",
+        "image": "offers/2020/05/29/services19.jpg",
+        "description": "PavelPavelPavelPavelPavelPavelPavelPavelPavelPavelPavelPavel",
+        "price": "500000",
+        "start_time": "2020-05-31",
+        "end_time": "2020-05-31",
+        "available": false,
+        "created": "2020-05-29",
+        "updated": "2020-05-29",
+        "category": []
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 14,
+    "fields": {
+        "first_name": "TreeNodeChoiceField",
+        "last_name": "TreeNodeChoiceField",
+        "middle_name": "TreeNodeChoiceField",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "TreeNodeChoiceField",
+        "slug": "",
+        "image": "offers/2020/05/29/news3.png",
+        "description": "TreeNodeChoiceFieldTreeNodeChoiceField",
+        "price": "50000",
+        "start_time": "2020-05-31",
+        "end_time": "2020-05-31",
+        "available": false,
+        "created": "2020-05-29",
+        "updated": "2020-05-29",
+        "category": []
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 15,
+    "fields": {
+        "first_name": "\u041f\u0430\u0432\u0435\u043b",
+        "last_name": "\u042d\u0445\u043e",
+        "middle_name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0435\u0432\u0438\u0447",
+        "phone": "89508790881",
+        "email": "aspirpd@gmail.com",
+        "name": "\u041f\u0440\u0438\u0432\u0435\u0441\u0442\u0438 \u0432 \u043f\u0440\u0438\u0433\u043e\u0434\u043d\u043e\u0435 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u043f\u043b\u0430\u043d\u0448\u0435\u0442 Samsung",
+        "slug": "privesti-v-prigodnoe-sostoyanie-planshet-samsung",
+        "image": "offers/2020/05/29/news3_GGhnmwn.png",
+        "description": "\u041d\u0435 \u0432\u043a\u043b\u044e\u0447\u0430\u0435\u0442\u0441\u044f \u043f\u043b\u0430\u043d\u0448\u0435\u0442. \u041f\u043e\u043f\u0430\u0434\u0430\u043b \u0432 \u0432\u043e\u0434\u0443. \u041d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u043f\u0440\u043e\u0432\u0435\u0441\u0442\u0438 \u0434\u0438\u0430\u0433\u043d\u043e\u0441\u0442\u0438\u043a\u0443 \u0438 \u043f\u043e\u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u0440\u0435\u043c\u043e\u043d\u0442 \u0441 \u0412\u0430\u0448\u0438\u043c \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u043e\u043c.",
+        "price": "9000",
+        "start_time": "2020-05-31",
+        "end_time": "2020-06-01",
+        "available": true,
+        "created": "2020-05-29",
+        "updated": "2020-05-29",
+        "category": [
+            4
+        ]
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 16,
+    "fields": {
+        "first_name": "\u041d\u0438\u043a\u043e\u043b\u0430\u0439",
+        "last_name": "\u041a\u043e\u043b\u0443\u043f\u0430\u0435\u0432",
+        "middle_name": "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+        "phone": "89207184747",
+        "email": "nikokolupaev@yandex.ru",
+        "name": "\u0417\u0430\u0448\u0442\u0443\u043a\u0430\u0442\u0443\u0440\u0438\u0442\u044c \u0441\u0442\u0435\u043d\u044b",
+        "slug": "",
+        "image": "offers/2020/05/29/shtykatyrka-2.jpg",
+        "description": "\u041d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u0437\u0430\u0448\u0442\u0443\u043a\u0430\u0442\u0443\u0440\u0438\u0442\u044c \u0441\u0442\u0435\u043d\u044b \u0432 \u0434\u043e\u043c\u0435 \u043f\u043b\u043e\u0449\u0430\u0434\u044c\u044e 350 \u043a\u0432. \u043c. \u0426\u0435\u043d\u0443 \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0439\u0442\u0435 \u0437\u0430 \u043a\u0432\u0430\u0434\u0440\u0430\u0442\u043d\u044b\u0439 \u043c\u0435\u0442\u0440, \u0442\u0430\u043a \u043a\u0430\u043a \u0446\u0435\u043d\u0430 \u0443\u043a\u0430\u0437\u0430\u043d\u0430 \u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440\u043e\u0432\u043e\u0447\u043d\u043e.",
+        "price": "1000",
+        "start_time": "2020-05-31",
+        "end_time": "2020-06-29",
+        "available": false,
+        "created": "2020-05-29",
+        "updated": "2020-05-29",
+        "category": []
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 17,
+    "fields": {
+        "first_name": "fdsfdsfds",
+        "last_name": "fdsfdsfds",
+        "middle_name": "fdsfdsfds",
+        "phone": "432432432",
+        "email": "aspirpd@gmail.com",
+        "name": "fdsfdsfds",
+        "slug": "",
+        "image": "offers/2020/05/29/shtykatyrka-2_FTM4Ger.jpg",
+        "description": "fdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfdsfds",
+        "price": "1000",
+        "start_time": "2020-05-31",
+        "end_time": "2020-06-01",
+        "available": false,
+        "created": "2020-05-29",
+        "updated": "2020-05-29",
+        "category": []
+    }
+},
+{
+    "model": "job.offer",
+    "pk": 18,
+    "fields": {
+        "first_name": "\u041f\u0430\u0432\u0435\u043b",
+        "last_name": "\u041f\u0430\u0432\u0435\u043b",
+        "middle_name": "\u041f\u0430\u0432\u0435\u043b",
+        "phone": "87124",
+        "email": "aspirpd@gmail.com",
+        "name": "\u041f\u0430\u0432\u0435\u043b",
+        "slug": "pavel",
+        "image": "",
+        "description": "\u041f\u0430\u0432\u0435\u043b",
+        "price": "0",
+        "start_time": "2020-05-03",
+        "end_time": "2020-05-17",
+        "available": true,
+        "created": "2020-05-30",
+        "updated": "2020-05-30",
+        "category": [
+            3
+        ]
+    }
+},
+{
+    "model": "reclame.category",
+    "pk": 1,
+    "fields": {
+        "name": "\u0418\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442",
+        "slug": "instrument",
+        "parent": null,
+        "is_active": true,
+        "created": "2020-04-09",
+        "updated": "2020-04-09",
+        "lft": 1,
+        "rght": 8,
+        "tree_id": 1,
+        "level": 0
+    }
+},
+{
+    "model": "reclame.category",
+    "pk": 2,
+    "fields": {
+        "name": "\u0418\u0437\u043c\u0435\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0439 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442",
+        "slug": "izmeritelnyj-instrument",
+        "parent": 1,
+        "is_active": true,
+        "created": "2020-04-09",
+        "updated": "2020-04-09",
+        "lft": 4,
+        "rght": 5,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "reclame.category",
+    "pk": 3,
+    "fields": {
+        "name": "\u0411\u0435\u043d\u0437\u043e\u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442",
+        "slug": "benzoinstrument",
+        "parent": 1,
+        "is_active": true,
+        "created": "2020-04-09",
+        "updated": "2020-04-09",
+        "lft": 2,
+        "rght": 3,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "reclame.category",
+    "pk": 4,
+    "fields": {
+        "name": "\u0420\u0443\u0447\u043d\u043e\u0439 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442",
+        "slug": "ruchnoj-instrument",
+        "parent": 1,
+        "is_active": true,
+        "created": "2020-04-09",
+        "updated": "2020-04-09",
+        "lft": 6,
+        "rght": 7,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "reclame.promotion",
+    "pk": 1,
+    "fields": {
+        "name": "\u0422\u0435\u0445\u043d\u043e\u0440\u0430\u043c\u0430",
+        "slug": "tehnorama",
+        "country": "\u0420\u043e\u0441\u0441\u0438\u044f",
+        "region": "\u041a\u0443\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
+        "town": "\u041a\u0443\u0440\u0441\u043a",
+        "site": "https://kursk.tehnorama.ru/",
+        "email": "zakaz@tehnorama.ru",
+        "photo": "promotions_test_photos/2020/04/09/master_login.jpg",
+        "logotype": "promotions_test_logotypes/2020/04/09/logo.jpg",
+        "description": "\u042d\u043b\u0435\u043a\u0442\u0440\u043e\u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b|\u0420\u0443\u0447\u043d\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b|\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435|\u0412\u0441\u0435 \u0434\u043b\u044f \u0441\u0430\u0434\u0430|\u0421\u0438\u043b\u043e\u0432\u0430\u044f \u0442\u0435\u0445\u043d\u0438\u043a\u0430|\u0421\u0430\u043d\u0442\u0435\u0445\u043d\u0438\u043a\u0430|\u0421\u0442\u0430\u043d\u043a\u0438|\u041f\u043e\u0434\u0430\u0440\u043e\u0447\u043d\u044b\u0435 \u043a\u0430\u0440\u0442\u044b|\u0418\u0437\u043c\u0435\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b|\u0420\u0430\u0441\u0445\u043e\u0434\u043d\u044b\u0435 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u044b|\u041a\u043b\u0438\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435|\u0411\u0430\u0440\u0431\u0435\u043a\u044e-\u0433\u0440\u0438\u043b\u0438, \u043c\u0430\u043d\u0433\u0430\u043b\u044b|\u0421\u043f\u0435\u0446\u043e\u0434\u0435\u0436\u0434\u0430 \u0438 \u0437\u0430\u0449\u0438\u0442\u0430|\u041a\u0440\u0435\u043f\u0435\u0436, \u0442\u0430\u043a\u0435\u043b\u0430\u0436.",
+        "is_active": true,
+        "paid": false,
+        "created": "2020-04-09",
+        "updated": "2020-04-09",
+        "category": [
+            1,
+            3,
+            2,
+            4
+        ]
+    }
+},
+{
+    "model": "reclame.promotion",
+    "pk": 2,
+    "fields": {
+        "name": "\u0422\u0435\u0445\u043d\u043e\u0440\u0430\u043c\u0430",
+        "slug": "tehnorama",
+        "country": "\u0420\u043e\u0441\u0441\u0438\u044f",
+        "region": "\u041a\u0443\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
+        "town": "\u041a\u0443\u0440\u0441\u043a",
+        "site": "https://kursk.tehnorama.ru/",
+        "email": "zakaz@tehnorama.ru",
+        "photo": "promotions_test_photos/2020/04/10/str_res_item.png",
+        "logotype": "promotions_test_logotypes/2020/04/10/logo_kodremonta.png",
+        "description": "\u042d\u043b\u0435\u043a\u0442\u0440\u043e\u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b|\u0420\u0443\u0447\u043d\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b|\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435|\u0412\u0441\u0435 \u0434\u043b\u044f \u0441\u0430\u0434\u0430|\u0421\u0438\u043b\u043e\u0432\u0430\u044f \u0442\u0435\u0445\u043d\u0438\u043a\u0430|\u0421\u0430\u043d\u0442\u0435\u0445\u043d\u0438\u043a\u0430|\u0421\u0442\u0430\u043d\u043a\u0438|\u041f\u043e\u0434\u0430\u0440\u043e\u0447\u043d\u044b\u0435 \u043a\u0430\u0440\u0442\u044b|\u0418\u0437\u043c\u0435\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b|\u0420\u0430\u0441\u0445\u043e\u0434\u043d\u044b\u0435 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u044b|\u041a\u043b\u0438\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435|\u0411\u0430\u0440\u0431\u0435\u043a\u044e-\u0433\u0440\u0438\u043b\u0438, \u043c\u0430\u043d\u0433\u0430\u043b\u044b|\u0421\u043f\u0435\u0446\u043e\u0434\u0435\u0436\u0434\u0430 \u0438 \u0437\u0430\u0449\u0438\u0442\u0430|\u041a\u0440\u0435\u043f\u0435\u0436, \u0442\u0430\u043a\u0435\u043b\u0430\u0436.",
+        "is_active": true,
+        "paid": false,
+        "created": "2020-04-09",
+        "updated": "2020-04-09",
+        "category": [
+            1,
+            3,
+            2,
+            4
+        ]
+    }
+},
+{
+    "model": "mygsp.category",
+    "pk": 1,
+    "fields": {
+        "name": "\u041a\u043e\u043c\u043f\u043b\u0435\u043a\u0441\u043d\u044b\u0435 \u0440\u0430\u0431\u043e\u0442\u044b",
+        "slug": "kompleksnye-raboty",
+        "is_active": true,
+        "created": "2020-03-24",
+        "updated": "2020-03-24"
+    }
+},
+{
+    "model": "mygsp.category",
+    "pk": 2,
+    "fields": {
+        "name": "\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u043d\u043e-\u043c\u043e\u043d\u0442\u0430\u0436\u043d\u044b\u0435 \u0440\u0430\u0431\u043e\u0442\u044b",
+        "slug": "stroitelno-montazhnye-raboty",
+        "is_active": true,
+        "created": "2020-03-24",
+        "updated": "2020-03-24"
+    }
+},
+{
+    "model": "mygsp.category",
+    "pk": 3,
+    "fields": {
+        "name": "\u0418\u043d\u0436\u0435\u043d\u0435\u0440\u043d\u044b\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u044b",
+        "slug": "inzhenernye-sistemy",
+        "is_active": true,
+        "created": "2020-03-24",
+        "updated": "2020-03-24"
+    }
+},
+{
+    "model": "mygsp.category",
+    "pk": 4,
+    "fields": {
+        "name": "\u0420\u0435\u043c\u043e\u043d\u0442 \u0431\u044b\u0442\u043e\u0432\u043e\u0439 \u0442\u0435\u0445\u043d\u0438\u043a\u0438",
+        "slug": "remont-bytovoj-tehniki",
+        "is_active": true,
+        "created": "2020-03-24",
+        "updated": "2020-03-24"
+    }
+},
+{
+    "model": "mygsp.offer",
+    "pk": 1,
+    "fields": {
+        "category": 4,
+        "first_name": "\u041f\u0430\u0432\u0435\u043b",
+        "last_name": "\u042d\u0445\u043e",
+        "middle_name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0435\u0432\u0438\u0447",
+        "phone": "+7-950-879-08-81",
+        "email": "aspirpd@gmail.com",
+        "name": "\u041f\u043e\u0447\u0438\u043d\u0438\u0442\u044c \u0441\u0442\u0438\u0440\u0430\u043b\u044c\u043d\u0443\u044e \u043c\u0430\u0448\u0438\u043d\u043a\u0443",
+        "slug": "pochinit-stiralnuyu-mashinku",
+        "image": "",
+        "description": "\u0421\u043b\u043e\u043c\u0430\u043b\u0441\u044f \u0431\u0430\u0440\u0430\u0431\u0430\u043d. \u041d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u0441\u0434\u0435\u043b\u0430\u0442\u044c \u043c\u0435\u0445\u0430\u043d\u0438\u0447\u0435\u0441\u043a\u0443\u044e \u0447\u0430\u0441\u0442\u044c \u0441\u0442\u0438\u0440\u0430\u043b\u044c\u043d\u043e\u0439 \u043c\u0430\u0448\u0438\u043d\u043a\u0438.",
+        "price": "1500",
+        "start_time": null,
+        "end_time": null,
+        "available": true,
+        "created": "2020-03-24",
+        "updated": "2020-03-24"
+    }
+},
+{
+    "model": "ad.category",
+    "pk": 1,
+    "fields": {
+        "name": "\u041a\u0440\u0435\u043f\u0451\u0436",
+        "slug": "krepyozh",
+        "is_active": true,
+        "created": "2020-03-24",
+        "updated": "2020-03-24"
+    }
+},
+{
+    "model": "ad.category",
+    "pk": 2,
+    "fields": {
+        "name": "\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u044b",
+        "slug": "stroitelnye-materialy",
+        "is_active": true,
+        "created": "2020-03-24",
+        "updated": "2020-03-24"
+    }
+},
+{
+    "model": "ad.category",
+    "pk": 3,
+    "fields": {
+        "name": "\u041a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f \u0442\u0435\u0445\u043d\u0438\u043a\u0430",
+        "slug": "kompyuternaya-tehnika",
+        "is_active": true,
+        "created": "2020-03-24",
+        "updated": "2020-03-24"
+    }
+},
+{
+    "model": "ad.subcategory",
+    "pk": 1,
+    "fields": {
+        "category": 2,
+        "name": "\u041a\u0430\u043c\u0435\u043d\u043d\u044b\u0435 \u0431\u043b\u043e\u043a\u0438",
+        "slug": "kamennye-bloki",
+        "is_active": true,
+        "created": "2020-03-24",
+        "updated": "2020-03-24"
+    }
+},
+{
+    "model": "ad.promotion",
+    "pk": 1,
+    "fields": {
+        "subcategory": 1,
+        "name": "\u041a\u043e\u0434 \u0440\u0435\u043c\u043e\u043d\u0442\u0430",
+        "slug": "kod-remonta",
+        "country": "\u0420\u043e\u0441\u0441\u0438\u044f",
+        "region": "\u041a\u0443\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
+        "town": "\u041a\u0443\u0440\u0441\u043a",
+        "address": "\u0443\u043b. \u041a\u0430\u0440\u043b\u0430 \u041c\u0430\u0440\u043a\u0441\u0430, 23",
+        "site": "https://kodremonta.ru/",
+        "phone": "+7-442-256-52-52",
+        "email": "kodrem@gmail.com",
+        "photo": "promotions_photos/2020/03/24/krepezh.jpg",
+        "logotype": "promotions_logotypes/2020/03/24/logo_kodremonta.png",
+        "description": "\u041d\u0430\u0448 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u043c\u0430\u0433\u0430\u0437\u0438\u043d \u0441\u0434\u0435\u043b\u0430\u043d \u0434\u043b\u044f \u0442\u043e\u0433\u043e, \u0447\u0442\u043e\u0431\u044b \u0432\u044b \u0441\u043c\u043e\u0433\u043b\u0438 \u0443\u0434\u043e\u0431\u043d\u043e, \u0431\u0435\u0437 \u043b\u0438\u0448\u043d\u0438\u0445 \u0437\u0430\u0431\u043e\u0442 \u043d\u0430\u0439\u0442\u0438 \u0438 \u0437\u0430\u043a\u0430\u0437\u0430\u0442\u044c \u0442\u043e, \u0447\u0442\u043e \u0432\u0430\u0441 \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0443\u0435\u0442. \u041c\u044b \u0437\u0430\u0431\u043e\u0442\u0438\u043c\u0441\u044f \u043e \u0442\u043e\u043c, \u0447\u0442\u043e\u0431\u044b \u0430\u0441\u0441\u043e\u0440\u0442\u0438\u043c\u0435\u043d\u0442 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430 \u0431\u044b\u043b \u0432\u0441\u0435\u0433\u0434\u0430 \u0430\u043a\u0442\u0443\u0430\u043b\u044c\u043d\u044b\u043c, \u0446\u0435\u043d\u044b \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u043c\u0438, \u0441\u0435\u0440\u0432\u0438\u0441 \u043b\u0443\u0447\u0448\u0438\u043c.\r\n\r\n\u041f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u043c \u0432\u0430\u043c \u0443\u0431\u0435\u0434\u0438\u0442\u0441\u044f \u0432 \u044d\u0442\u043e\u043c, \u0441\u0434\u0435\u043b\u0430\u0432 \u0437\u0430\u043a\u0430\u0437, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0441\u043c\u043e\u0436\u0435\u0442\u0435 \u0431\u044b\u0441\u0442\u0440\u043e \u043e\u043f\u043b\u0430\u0442\u0438\u0442\u044c \u0438 \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u044c. \u041f\u043e\u0434\u0440\u043e\u0431\u043d\u0435\u0435 \u043e \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u0430\u0445 \u043e\u043f\u043b\u0430\u0442\u044b \u0438 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438 \u043c\u043e\u0436\u043d\u043e \u0443\u0437\u043d\u0430\u0442\u044c \u043d\u0430 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0445 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430\u0445 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430.",
+        "is_active": true,
+        "paid": false,
+        "created": "2020-03-24",
+        "updated": "2020-03-24",
+        "category": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "emails.emailtype",
+    "pk": 1,
+    "fields": {
+        "name": "\u0423\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440\u0443",
+        "is_active": true,
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailtype",
+    "pk": 2,
+    "fields": {
+        "name": "\u0423\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435 \u043f\u043e\u0434\u0430\u0432\u0448\u0435\u043c\u0443 \u0437\u0430\u044f\u0432\u043a\u0443 \u043d\u0430 \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u044e \u0437\u0430\u043a\u0430\u0437\u0430",
+        "is_active": true,
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 1,
+    "fields": {
+        "type": 1,
+        "offer": 6,
+        "email": "gspcompany46@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 2,
+    "fields": {
+        "type": 2,
+        "offer": 6,
+        "email": "aspirpd@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 3,
+    "fields": {
+        "type": 1,
+        "offer": 7,
+        "email": "gspcompany46@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 4,
+    "fields": {
+        "type": 2,
+        "offer": 7,
+        "email": "aspirpd@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 5,
+    "fields": {
+        "type": 1,
+        "offer": 8,
+        "email": "gspcompany46@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 6,
+    "fields": {
+        "type": 2,
+        "offer": 8,
+        "email": "aspirpd@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 7,
+    "fields": {
+        "type": 1,
+        "offer": 9,
+        "email": "gspcompany46@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 8,
+    "fields": {
+        "type": 2,
+        "offer": 9,
+        "email": "aspirpd@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 9,
+    "fields": {
+        "type": 1,
+        "offer": 10,
+        "email": "gspcompany46@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 10,
+    "fields": {
+        "type": 2,
+        "offer": 10,
+        "email": "aspirpd@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 11,
+    "fields": {
+        "type": 1,
+        "offer": 11,
+        "email": "gspcompany46@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 12,
+    "fields": {
+        "type": 2,
+        "offer": 11,
+        "email": "aspirpd@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 13,
+    "fields": {
+        "type": 1,
+        "offer": 12,
+        "email": "gspcompany46@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 14,
+    "fields": {
+        "type": 2,
+        "offer": 12,
+        "email": "aspirpd@gmail.com",
+        "created": "2020-05-28",
+        "updated": "2020-05-28"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 15,
+    "fields": {
+        "type": 1,
+        "offer": 13,
+        "email": "gspcompany46@gmail.com",
+        "created": "2020-05-29",
+        "updated": "2020-05-29"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 16,
+    "fields": {
+        "type": 2,
+        "offer": 13,
+        "email": "aspirpd@gmail.com",
+        "created": "2020-05-29",
+        "updated": "2020-05-29"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 17,
+    "fields": {
+        "type": 1,
+        "offer": 14,
+        "email": "gspcompany46@gmail.com",
+        "created": "2020-05-29",
+        "updated": "2020-05-29"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 18,
+    "fields": {
+        "type": 2,
+        "offer": 14,
+        "email": "aspirpd@gmail.com",
+        "created": "2020-05-29",
+        "updated": "2020-05-29"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 19,
+    "fields": {
+        "type": 1,
+        "offer": 15,
+        "email": "gspcompany46@gmail.com",
+        "created": "2020-05-29",
+        "updated": "2020-05-29"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 20,
+    "fields": {
+        "type": 2,
+        "offer": 15,
+        "email": "aspirpd@gmail.com",
+        "created": "2020-05-29",
+        "updated": "2020-05-29"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 21,
+    "fields": {
+        "type": 1,
+        "offer": 16,
+        "email": "gspcompany46@gmail.com",
+        "created": "2020-05-29",
+        "updated": "2020-05-29"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 22,
+    "fields": {
+        "type": 2,
+        "offer": 16,
+        "email": "nikokolupaev@yandex.ru",
+        "created": "2020-05-29",
+        "updated": "2020-05-29"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 23,
+    "fields": {
+        "type": 1,
+        "offer": 17,
+        "email": "gsptest46@gmail.com",
+        "created": "2020-05-29",
+        "updated": "2020-05-29"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 24,
+    "fields": {
+        "type": 2,
+        "offer": 17,
+        "email": "aspirpd@gmail.com",
+        "created": "2020-05-29",
+        "updated": "2020-05-29"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 25,
+    "fields": {
+        "type": 1,
+        "offer": 18,
+        "email": "gsptest46@gmail.com",
+        "created": "2020-05-30",
+        "updated": "2020-05-30"
+    }
+},
+{
+    "model": "emails.emailsendingfact",
+    "pk": 26,
+    "fields": {
+        "type": 2,
+        "offer": 18,
+        "email": "aspirpd@gmail.com",
+        "created": "2020-05-30",
+        "updated": "2020-05-30"
+    }
+}
+]
